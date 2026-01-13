@@ -73,13 +73,25 @@ const App: React.FC = () => {
       const scriptProcessor = audioContextInRef.current.createScriptProcessor(4096, 1, 1);
 
       scriptProcessor.onaudioprocess = (e) => {
-        if (statusRef.current !== AgentStatus.LISTENING) return; // Solo enviar si estamos escuchando
+        if (statusRef.current !== AgentStatus.LISTENING) return;
 
         const inputData = e.inputBuffer.getChannelData(0);
+
+        // Calcular volumen (RMS) para debug
+        let sum = 0;
+        for (let i = 0; i < inputData.length; i++) {
+          sum += inputData[i] * inputData[i];
+        }
+        const rms = Math.sqrt(sum / inputData.length);
+
+        if (rms > 0.01) { // Solo loguear si hay algo de audio
+          // console.log("🎤 Enviando audio a Gemini... RMS:", rms); 
+        }
+
         const pcmData = createPcmBlob(inputData);
         sessionPromiseRef.current?.then(session => {
           session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
-        });
+        }).catch(e => console.error("Error enviando audio:", e));
       };
 
       source.connect(scriptProcessor);
