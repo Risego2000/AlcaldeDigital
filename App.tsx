@@ -173,8 +173,8 @@ const App: React.FC = () => {
               setStatus(AgentStatus.SPEAKING);
 
               // Pausar/desconectar micrófono mientras habla para evitar eco
-              if (micSourceRef.current) { micSourceRef.current.disconnect(); }
-              if (micProcessorRef.current) { micProcessorRef.current.disconnect(); }
+              // if (micSourceRef.current) { micSourceRef.current.disconnect(); }
+              // if (micProcessorRef.current) { micProcessorRef.current.disconnect(); }
 
               const ctx = audioContextOutRef.current;
               nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
