@@ -1,0 +1,7 @@
+{
+  "name": "Daganzo Atiende - Oficina Virtual",
+  "description": "Atención ciudadana personalizada con el Alcalde de Daganzo de Arriba mediante IA de voz nativa.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daganzo Atiende</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes pulse-ring {
+            0% { transform: scale(.33); opacity: 1; }
+            80%, 100% { opacity: 0; }
+        }
+        @keyframes pulse-dot {
+            0% { transform: scale(.8); }
+            50% { transform: scale(1); }
+            100% { transform: scale(.8); }
+        }
+        .animate-pulse-ring {
+            animation: pulse-ring 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+        .animate-pulse-dot {
+            animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+        
+        /* Smooth scrolling for the transcription box */
+        #transcription-container {
+            scroll-behavior: smooth;
+        }
+
+        /* Avatar scan line effect */
+        @keyframes scan {
+          0% { top: 0%; opacity: 0; }
+          50% { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
