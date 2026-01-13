@@ -29,7 +29,10 @@ const App: React.FC = () => {
   const micProcessorRef = useRef<ScriptProcessorNode | null>(null);
   const micStreamRef = useRef<MediaStream | null>(null);
 
+  const statusRef = useRef<AgentStatus>(AgentStatus.IDLE);
+
   useEffect(() => {
+    statusRef.current = status;
     const updateVolume = () => {
       if (analyserRef.current && (status === AgentStatus.SPEAKING || status === AgentStatus.LISTENING)) {
         const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
@@ -70,7 +73,7 @@ const App: React.FC = () => {
       const scriptProcessor = audioContextInRef.current.createScriptProcessor(4096, 1, 1);
 
       scriptProcessor.onaudioprocess = (e) => {
-        if (status !== AgentStatus.LISTENING) return; // Solo enviar si estamos escuchando
+        if (statusRef.current !== AgentStatus.LISTENING) return; // Solo enviar si estamos escuchando
 
         const inputData = e.inputBuffer.getChannelData(0);
         const pcmData = createPcmBlob(inputData);
