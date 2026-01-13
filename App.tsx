@@ -4,7 +4,7 @@ import { GoogleGenAI, Modality, LiveServerMessage } from '@google/genai';
 import { SYSTEM_INSTRUCTION } from './constants';
 import { AgentStatus } from './types';
 import DigitalAvatar from './components/DigitalAvatar';
-import { decodeBase64, decodeAudioData, createPcmBlob } from './utils/audioUtils';
+import { decodeBase64, decodeAudioData, createPcmBlob, downsampleBuffer } from './utils/audioUtils';
 
 interface GroundingSource {
   title: string;
@@ -89,7 +89,9 @@ const App: React.FC = () => {
           console.log("🎤 Enviando audio a Gemini... RMS:", rms.toFixed(4));
         }
 
-        const pcmData = createPcmBlob(inputData);
+        const inputSampleRate = audioContextInRef.current.sampleRate;
+        const downsampled = downsampleBuffer(inputData, inputSampleRate, 16000);
+        const pcmData = createPcmBlob(downsampled);
         sessionPromiseRef.current?.then(session => {
           session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
         }).catch(e => console.error("Error enviando audio:", e));
