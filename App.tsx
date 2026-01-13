@@ -72,6 +72,7 @@ const App: React.FC = () => {
       const source = audioContextInRef.current.createMediaStreamSource(stream);
       const scriptProcessor = audioContextInRef.current.createScriptProcessor(4096, 1, 1);
 
+
       scriptProcessor.onaudioprocess = (e) => {
         if (statusRef.current !== AgentStatus.LISTENING) return;
 
@@ -84,8 +85,8 @@ const App: React.FC = () => {
         }
         const rms = Math.sqrt(sum / inputData.length);
 
-        if (rms > 0.01) { // Solo loguear si hay algo de audio
-          // console.log("🎤 Enviando audio a Gemini... RMS:", rms); 
+        if (rms > 0.01) {
+          console.log("🎤 Enviando audio a Gemini... RMS:", rms.toFixed(4));
         }
 
         const pcmData = createPcmBlob(inputData);
