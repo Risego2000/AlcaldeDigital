@@ -74,27 +74,35 @@ const App: React.FC = () => {
 
 
       scriptProcessor.onaudioprocess = (e) => {
-        if (statusRef.current !== AgentStatus.LISTENING) return;
+        // PERMITIR SIEMPRE el envío de audio para detectar interrupciones (Barge-in)
+        // Solo filtramos si no estamos en vivo o si la sesión ha sido limpiada
+        if (!isLive || !sessionPromiseRef.current) return;
 
         const inputData = e.inputBuffer.getChannelData(0);
 
-        // Calcular volumen (RMS) para debug
-        let sum = 0;
-        for (let i = 0; i < inputData.length; i++) {
-          sum += inputData[i] * inputData[i];
-        }
-        const rms = Math.sqrt(sum / inputData.length);
-
-        if (rms > 0.01) {
-          console.log("🎤 Enviando audio a Gemini... RMS:", rms.toFixed(4));
-        }
+        // Debug volumen (descomentar si se necesita)
+        // let sum = 0;
+        // for (let i = 0; i < inputData.length; i++) { sum += inputData[i] * inputData[i]; }
+        // const rms = Math.sqrt(sum / inputData.length);
+        // if (rms > 0.01) console.log("🎤 Audio in RMS:", rms.toFixed(4));
 
         const inputSampleRate = audioContextInRef.current.sampleRate;
         const downsampled = downsampleBuffer(inputData, inputSampleRate, 16000);
         const pcmData = createPcmBlob(downsampled);
-        sessionPromiseRef.current?.then(session => {
+
+        sessionPromiseRef.current.then(session => {
+          // Verificar si el socket está abierto antes de enviar (evita error "WebSocket is closed")
+          // Nota: La API de GenAI no expone el socket directamente, pero podemos atrapar el error.
           session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
-        }).catch(e => console.error("Error enviando audio:", e));
+        }).catch(e => {
+          // Si el error indica que el socket está cerrado, detenemos el procesamiento
+          if (JSON.stringify(e).includes("CLOSED") || JSON.stringify(e).includes("CLOSING")) {
+            console.warn("⚠️ WebSocket cerrado, deteniendo envío de audio.");
+            // Opcional: llamar a handleStop() si es crítico, pero aquí solo evitamos el log
+          } else {
+            console.error("Error enviando audio:", e);
+          }
+        });
       };
 
       source.connect(scriptProcessor);
