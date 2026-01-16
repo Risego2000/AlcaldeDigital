@@ -551,120 +551,125 @@
       "Ejemplo práctico": "Te faltó el contrato de alquiler: te piden subsanar.",
       "Normativa/Referencia (URL o ID)": "BOE / Ley 39/2015"
     },
-    "Ejemplo práctico": "Obra menor por comunicación previa, si procede.",
-  }
-],
-"normativa": [
-  {
-    "ID": "ORD-FIS-001",
-    "Nombre": "IMPUESTO SOBRE BIENES INMUEBLES (IBI)",
-    "Tipo": "Fiscal",
-    "Descripcion": "Regula el cobro del impuesto anual sobre la propiedad de bienes inmuebles rústicos y urbanos.",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-ibi.pdf",
-    "Palabras clave": [
-      "contri",
-      "contribución",
-      "impuesto casa",
-      "recibo ibi"
-    ]
-  },
-  {
-    "ID": "ORD-FIS-002",
-    "Nombre": "IMPUESTO SOBRE ACTIVIDADES ECONÓMICAS (IAE)",
-    "Tipo": "Fiscal",
-    "Descripcion": "Impuesto sobre el ejercicio de actividades empresariales, profesionales o artísticas.",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-iae.pdf",
-    "Palabras clave": [
-      "impuesto negocio",
-      "tributo empresa",
-      "local comercial"
-    ]
-  },
-  {
-    "ID": "ORD-FIS-003",
-    "Nombre": "IMPUESTO SOBRE VEHÍCULOS DE TRACCIÓN MECÁNICA (IVTM)",
-    "Tipo": "Fiscal",
-    "Descripcion": "Impuesto sobre la titularidad de los vehículos aptos para circular.",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-ivtm.pdf",
-    "Palabras clave": [
-      "impuesto coche",
-      "numerito",
-      "sello coche",
-      "viñeta",
-      "impuesto circulación"
-    ]
-  },
-  {
-    "ID": "ORD-FIS-004",
-    "Nombre": "IMPUESTO SOBRE EL INCREMENTO DE VALOR DE LOS TERRENOS DE NATURALEZA URBANA (IIVTNU)",
-    "Tipo": "Fiscal",
-    "Descripcion": "Tributo que grava el incremento de valor de los terrenos urbanos al transmitirse (venta, herencia, donación).",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-plusvalia.pdf",
-    "Palabras clave": [
-      "plusvalía",
-      "impuesto venta piso",
-      "impuesto herencia terreno"
-    ]
-  },
-  {
-    "ID": "ORD-FIS-005",
-    "Nombre": "IMPUESTO SOBRE CONSTRUCCIONES, INSTALACIONES Y OBRAS (ICIO)",
-    "Tipo": "Fiscal",
-    "Descripcion": "Impuesto que grava la realización de construcciones, instalaciones u obras que requieran licencia o comunicación.",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-icio.pdf",
-    "Palabras clave": [
-      "impuesto obra",
-      "licencia obra",
-      "reforma"
-    ]
-  },
-  {
-    "ID": "ORD-GEN-001",
-    "Nombre": "ORDENANZA GENERAL DE GESTIÓN, INSPECCIÓN Y RECAUDACIÓN",
-    "Tipo": "General",
-    "Descripcion": "Normativa marco sobre cómo el Ayuntamiento gestiona, inspecciona y recauda los tributos.",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-general-recaudacion.pdf",
-    "Palabras clave": [
-      "pagar impuestos",
-      "multas",
-      "recaudación",
-      "plazos"
-    ]
-  },
-  {
-    "ID": "ORD-TAS-001",
-    "Nombre": "TASA POR PRESTACIÓN DE SERVICIOS CEMENTERIO MUNICIPAL",
-    "Tipo": "Tasa",
-    "Descripcion": "Regula las tarifas por enterramientos, nichos y servicios funerarios municipales.",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-cementerio.pdf",
-    "Palabras clave": [
-      "tasa entierro",
-      "nicho",
-      "cementerio"
-    ]
-  },
-  {
-    "ID": "ORD-TAS-002",
-    "Nombre": "TASA POR LICENCIAS URBANÍSTICAS",
-    "Tipo": "Tasa",
-    "Descripcion": "Tasa administrativa por la tramitación de licencias de obra y urbanismo.",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-licencias-urbanisticas.pdf",
-    "Palabras clave": [
-      "tasa obra",
-      "pago licencia"
-    ]
-  },
-  {
-    "ID": "ORD-TAS-003",
-    "Nombre": "TASA POR VADOS",
-    "Tipo": "Tasa",
-    "Descripcion": "Tasa por la utilización privativa o aprovechamiento especial del dominio público local (entrada de vehículos).",
-    "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-vados.pdf",
-    "Palabras clave": [
-      "vado",
-      "placa vado",
-      "garaje"
-    ]
-  }
-]
+    {
+      "Término": "Comunicación previa",
+      "Definición (voz)": "Aviso formal antes de actuar.",
+      "Explicación ampliada": "Se comunica a la Administración el inicio de una actuación, con requisitos definidos y control posterior.",
+      "Ejemplo práctico": "Obra menor por comunicación previa, si procede.",
+      "Normativa/Referencia (URL o ID)": "Ordenanza/Normativa urbanística"
+    }
+  ],
+  "normativa": [
+    {
+      "ID": "ORD-FIS-001",
+      "Nombre": "IMPUESTO SOBRE BIENES INMUEBLES (IBI)",
+      "Tipo": "Fiscal",
+      "Descripcion": "Regula el cobro del impuesto anual sobre la propiedad de bienes inmuebles rústicos y urbanos.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-ibi.pdf",
+      "Palabras clave": [
+        "contri",
+        "contribución",
+        "impuesto casa",
+        "recibo ibi"
+      ]
+    },
+    {
+      "ID": "ORD-FIS-002",
+      "Nombre": "IMPUESTO SOBRE ACTIVIDADES ECONÓMICAS (IAE)",
+      "Tipo": "Fiscal",
+      "Descripcion": "Impuesto sobre el ejercicio de actividades empresariales, profesionales o artísticas.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-iae.pdf",
+      "Palabras clave": [
+        "impuesto negocio",
+        "tributo empresa",
+        "local comercial"
+      ]
+    },
+    {
+      "ID": "ORD-FIS-003",
+      "Nombre": "IMPUESTO SOBRE VEHÍCULOS DE TRACCIÓN MECÁNICA (IVTM)",
+      "Tipo": "Fiscal",
+      "Descripcion": "Impuesto sobre la titularidad de los vehículos aptos para circular.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-ivtm.pdf",
+      "Palabras clave": [
+        "impuesto coche",
+        "numerito",
+        "sello coche",
+        "viñeta",
+        "impuesto circulación"
+      ]
+    },
+    {
+      "ID": "ORD-FIS-004",
+      "Nombre": "IMPUESTO SOBRE EL INCREMENTO DE VALOR DE LOS TERRENOS DE NATURALEZA URBANA (IIVTNU)",
+      "Tipo": "Fiscal",
+      "Descripcion": "Tributo que grava el incremento de valor de los terrenos urbanos al transmitirse (venta, herencia, donación).",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-plusvalia.pdf",
+      "Palabras clave": [
+        "plusvalía",
+        "impuesto venta piso",
+        "impuesto herencia terreno"
+      ]
+    },
+    {
+      "ID": "ORD-FIS-005",
+      "Nombre": "IMPUESTO SOBRE CONSTRUCCIONES, INSTALACIONES Y OBRAS (ICIO)",
+      "Tipo": "Fiscal",
+      "Descripcion": "Impuesto que grava la realización de construcciones, instalaciones u obras que requieran licencia o comunicación.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-icio.pdf",
+      "Palabras clave": [
+        "impuesto obra",
+        "licencia obra",
+        "reforma"
+      ]
+    },
+    {
+      "ID": "ORD-GEN-001",
+      "Nombre": "ORDENANZA GENERAL DE GESTIÓN, INSPECCIÓN Y RECAUDACIÓN",
+      "Tipo": "General",
+      "Descripcion": "Normativa marco sobre cómo el Ayuntamiento gestiona, inspecciona y recauda los tributos.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-general-recaudacion.pdf",
+      "Palabras clave": [
+        "pagar impuestos",
+        "multas",
+        "recaudación",
+        "plazos"
+      ]
+    },
+    {
+      "ID": "ORD-TAS-001",
+      "Nombre": "TASA POR PRESTACIÓN DE SERVICIOS CEMENTERIO MUNICIPAL",
+      "Tipo": "Tasa",
+      "Descripcion": "Regula las tarifas por enterramientos, nichos y servicios funerarios municipales.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-cementerio.pdf",
+      "Palabras clave": [
+        "tasa entierro",
+        "nicho",
+        "cementerio"
+      ]
+    },
+    {
+      "ID": "ORD-TAS-002",
+      "Nombre": "TASA POR LICENCIAS URBANÍSTICAS",
+      "Tipo": "Tasa",
+      "Descripcion": "Tasa administrativa por la tramitación de licencias de obra y urbanismo.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-licencias-urbanisticas.pdf",
+      "Palabras clave": [
+        "tasa obra",
+        "pago licencia"
+      ]
+    },
+    {
+      "ID": "ORD-TAS-003",
+      "Nombre": "TASA POR VADOS",
+      "Tipo": "Tasa",
+      "Descripcion": "Tasa por la utilización privativa o aprovechamiento especial del dominio público local (entrada de vehículos).",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-vados.pdf",
+      "Palabras clave": [
+        "vado",
+        "placa vado",
+        "garaje"
+      ]
+    }
+  ]
 }
