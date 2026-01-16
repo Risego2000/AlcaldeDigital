@@ -324,7 +324,7 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
 
         <header className="text-center space-y-4 animate-fadeIn w-full flex flex-col items-center">
           <div className="flex items-center gap-3 mb-2">
-            <img src="EscudoBl.png" alt="Escudo Daganzo" className="h-10 md:h-14 opacity-90 drop-shadow-lg" />
+            <img src="Escudobn.png" alt="Escudo Daganzo" className="h-10 md:h-14 opacity-90 drop-shadow-lg" />
           </div>
           <h1 className="text-2xl md:text-4xl font-light tracking-widest uppercase">
             Ayuntamiento de <span className="font-bold block md:inline text-blue-400">Daganzo de Arriba</span>
