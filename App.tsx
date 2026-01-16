@@ -133,7 +133,7 @@ const App: React.FC = () => {
 
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       audioContextInRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
-      audioContextOutRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
+      audioContextOutRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 48000 }); // CHANGED: 48000Hz (standard) instead of 24000Hz
 
       analyserRef.current = audioContextOutRef.current.createAnalyser();
       analyserRef.current.fftSize = 256;
@@ -207,7 +207,7 @@ const App: React.FC = () => {
               }
 
               nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
-              const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 24000, 1);
+              const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 48000, 1); // CHANGED: 48000Hz to match AudioContext
               console.log(`🔊 Audio decodificado: ${audioBuffer.duration.toFixed(2)}s, ${audioBuffer.numberOfChannels} canales`);
 
               // DEBUG: Test directo de reproducción con el primer chunk
