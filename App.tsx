@@ -189,12 +189,13 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
         },
         callbacks: {
           onopen: () => {
-            setStatus(AgentStatus.SPEAKING);
+            console.log('🌐 Sesión Live abierta');
+            setStatus(AgentStatus.LISTENING);
+            startMicrophone(); // INICIAR MICRÓFONO INMEDIATAMENTE para permitir interrupciones
 
             sessionPromise.then(session => {
               session.sendRealtimeInput({ text: "CONEXIÓN ESTABLECIDA. Saluda al ciudadano como Manuel Jurado y ofrécele tu ayuda." });
             });
-            // NOTA: El micrófono se iniciará después del saludo inicial
           },
           onmessage: async (message: LiveServerMessage) => {
             const groundingMetadata = message.serverContent?.groundingMetadata;
@@ -217,91 +218,49 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
 
             const base64Audio = message.serverContent?.modelTurn?.parts?.[0]?.inlineData?.data;
             if (base64Audio && audioContextOutRef.current && analyserRef.current) {
-              console.log('🎵 Gemini enviando audio, chunks activos:', activeSourcesRef.current.size);
+              const ctx = audioContextOutRef.current;
               setStatus(AgentStatus.SPEAKING);
 
-              // Pausar/desconectar micrófono mientras habla para evitar eco
-              // if (micSourceRef.current) { micSourceRef.current.disconnect(); }
-              // if (micProcessorRef.current) { micProcessorRef.current.disconnect(); }
-
-              const ctx = audioContextOutRef.current;
-
-              // Log estado del AudioContext
-              console.log(`🎛️ AudioContext state: ${ctx.state}, sampleRate: ${ctx.sampleRate}, currentTime: ${ctx.currentTime.toFixed(2)}s`);
-
-              // CRÍTICO: Asegurar que el AudioContext está en estado 'running'
               if (ctx.state === 'suspended') {
-                console.warn('⚠️ AudioContext suspended, resuming...');
                 await ctx.resume();
-                console.log('✅ AudioContext resumed, state:', ctx.state);
               }
 
-              if (ctx.state !== 'running') {
-                console.error('❌ AudioContext NOT running! State:', ctx.state);
+              // Sincronizar tiempo si no hay nada sonando
+              if (activeSourcesRef.current.size === 0) {
+                nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime + 0.05);
               }
 
-              nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
-              const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 24000, 1); // Gemini sends 24kHz, browser will resample to 48kHz
-              console.log(`🔊 Audio decodificado: ${audioBuffer.duration.toFixed(2)}s, ${audioBuffer.numberOfChannels} canales`);
-
-              // DEBUG: Test directo de reproducción con el primer chunk
-              if (!(window as any).hasTestedAudio) {
-                (window as any).hasTestedAudio = true;
-                console.log('🧪 TEST: Intentando reproducir este chunk directamente...');
-                const testSource = ctx.createBufferSource();
-                testSource.buffer = audioBuffer;
-                testSource.connect(ctx.destination);
-                testSource.start(0); // Inmediato
-                testSource.onended = () => console.log('🧪 TEST chunk terminado');
-                console.log('🧪 TEST: Si escuchas algo AHORA, el pipeline funciona');
-              }
-
+              const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 24000, 1);
               const source = ctx.createBufferSource();
               source.buffer = audioBuffer;
 
-              // Conectar al analyser para visualización
               source.connect(analyserRef.current);
-
-              // TEMPORAL DEBUG: Conectar TAMBIÉN directamente al destination
-              // para bypass del analyser por si está causando problemas
               source.connect(ctx.destination);
-              console.log('🔌 Source conectado a analyser Y destination (debug)');
 
               source.onended = () => {
                 activeSourcesRef.current.delete(source);
-                console.log('✅ Chunk terminado. Quedan:', activeSourcesRef.current.size);
-
-                // Limpiar cualquier timer anterior
-                if (listeningTimerRef.current) {
-                  clearTimeout(listeningTimerRef.current);
-                }
-
-                // Si no quedan chunks, esperar 1.5s antes de cambiar a LISTENING
                 if (activeSourcesRef.current.size === 0) {
-                  listeningTimerRef.current = setTimeout(() => {
-                    console.log('👂 Cambiando a LISTENING - listo para escuchar');
-                    setStatus(AgentStatus.LISTENING);
-                    startMicrophone(); // Activar micrófono
-                  }, 1500);
+                  setStatus(AgentStatus.LISTENING);
                 }
               };
 
-              console.log(`▶️ Starting playback at ${nextStartTimeRef.current.toFixed(2)}s`);
               source.start(nextStartTimeRef.current);
               nextStartTimeRef.current += audioBuffer.duration;
               activeSourcesRef.current.add(source);
             }
 
             if (message.serverContent?.interrupted) {
-              if (listeningTimerRef.current) {
-                clearTimeout(listeningTimerRef.current);
-                listeningTimerRef.current = null;
-              }
-              activeSourcesRef.current.forEach(s => { try { s.stop(); } catch (e) { } });
+              console.log('🔇 Interrupción detectada (Barge-in), deteniendo audio...');
+
+              activeSourcesRef.current.forEach(s => {
+                try { s.stop(); s.disconnect(); } catch (e) { }
+              });
               activeSourcesRef.current.clear();
-              nextStartTimeRef.current = 0;
+
+              if (audioContextOutRef.current) {
+                nextStartTimeRef.current = audioContextOutRef.current.currentTime;
+              }
               setStatus(AgentStatus.LISTENING);
-              startMicrophone(); // Reactivar micrófono al interrumpir
             }
           },
           onerror: (e) => {
