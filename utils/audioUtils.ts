@@ -34,7 +34,7 @@ function createWavHeader(dataLength: number, sampleRate: number, numChannels: nu
   view.setUint16(20, 1, true); // Audio format (1 = PCM)
   view.setUint16(22, numChannels, true);
   view.setUint32(24, sampleRate, true);
-  view.setUint32(28, sampleRate * num Channels * bitsPerSample / 8, true); // Byte rate
+  view.setUint32(28, sampleRate * numChannels * bitsPerSample / 8, true); // Byte rate
   view.setUint16(32, numChannels * bitsPerSample / 8, true); // Block align
   view.setUint16(34, bitsPerSample, true);
 
