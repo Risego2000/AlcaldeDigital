@@ -323,15 +323,21 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
       <main className="relative z-10 w-full max-w-5xl flex flex-col items-center justify-between min-h-screen py-6 md:py-10 px-4 md:px-6">
 
         <header className="text-center space-y-4 animate-fadeIn w-full flex flex-col items-center">
-          <div className="flex items-center gap-3 mb-2">
-            <img src="Escudobn.png" alt="Escudo Daganzo" className="h-10 md:h-14 opacity-90 drop-shadow-lg" />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+            <img
+              src="Escudobn.png"
+              alt="Escudo Daganzo"
+              className="h-16 md:h-20 w-auto object-contain brightness-110 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] mix-blend-lighten"
+            />
+            <div className="text-center md:text-left">
+              <h1 className="text-2xl md:text-4xl font-light tracking-widest uppercase">
+                Ayuntamiento de <span className="font-bold block md:inline text-blue-400">Daganzo de Arriba</span>
+              </h1>
+              <p className="text-[10px] md:text-xs text-slate-400 font-medium tracking-[0.2em] uppercase opacity-70 leading-relaxed mt-1">
+                Oficina virtual de atención al ciudadano
+              </p>
+            </div>
           </div>
-          <h1 className="text-2xl md:text-4xl font-light tracking-widest uppercase">
-            Ayuntamiento de <span className="font-bold block md:inline text-blue-400">Daganzo de Arriba</span>
-          </h1>
-          <p className="text-[10px] md:text-xs text-slate-400 font-medium tracking-[0.2em] uppercase opacity-70 leading-relaxed">
-            Oficina virtual de atencion al ciudadano
-          </p>
         </header>
 
         <div className="relative flex-1 flex flex-col items-center justify-center w-full my-6">
