@@ -1,0 +1,17 @@
+{
+    "name": "Daganzo Atiende - Oficina Virtual",
+    "short_name": "Daganzo Atiende",
+    "description": "Atención ciudadana personalizada con el Alcalde de Daganzo de Arriba.",
+    "start_url": "/AlcaldeDigital/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#166534",
+    "icons": [
+        {
+            "src": "icon.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "purpose": "any maskable"
+        }
+    ]
+}
