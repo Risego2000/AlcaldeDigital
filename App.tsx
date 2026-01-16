@@ -122,6 +122,11 @@ const App: React.FC = () => {
         if (!hasKey) await (window as any).aistudio.openSelectKey();
       }
 
+      if (!process.env.API_KEY) {
+        alert("Error: No se encontró la API Key de Gemini. Verifica la configuración de secretos en GitHub.");
+        return;
+      }
+
       setSources([]);
       setStatus(AgentStatus.CONNECTING);
       setIsLive(true);
@@ -238,6 +243,7 @@ const App: React.FC = () => {
       sessionPromiseRef.current = sessionPromise;
     } catch (err) {
       console.error("Failed to start call:", err);
+      alert(`Error al iniciar la llamada: ${err instanceof Error ? err.message : String(err)}`);
       setStatus(AgentStatus.ERROR);
       setIsLive(false);
     }
