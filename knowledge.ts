@@ -9,6 +9,7 @@ interface V1Knowledge {
     faqs: any[];
     reglas_bandos_calendarios: any[];
     glosario: any[];
+    normativa: any[];
 }
 
 interface V2Intents {
