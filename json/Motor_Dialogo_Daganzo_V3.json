@@ -5,7 +5,7 @@
     "municipio": "Daganzo de Arriba",
     "timezone": "Europe/Madrid",
     "generated_at_utc": "2026-01-13T02:19:00.404376+00:00",
-    "source_workbook": "BaseConocimiento_Daganzo_Ampliada_CON_INTENCIONES_V2.xlsx",
+    "source": "Base de conocimiento municipal integrada",
     "schema_version": "0.1",
     "flows_count": 526
   },
