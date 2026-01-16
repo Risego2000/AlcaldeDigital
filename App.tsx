@@ -62,11 +62,22 @@ const App: React.FC = () => {
 
   // Función para iniciar el micrófono y enviar audio a Gemini cuando el agente está LISTENING
   const startMicrophone = async () => {
+    console.log('🎤 startMicrophone() called');
     try {
-      if (!audioContextInRef.current || !sessionPromiseRef.current) return;
+      if (!audioContextInRef.current) {
+        console.error('❌ audioContextInRef.current is NULL');
+        return;
+      }
+      if (!sessionPromiseRef.current) {
+        console.error('❌ sessionPromiseRef.current is NULL');
+        return;
+      }
+
+      console.log('✅ audioContextInRef and sessionPromiseRef are valid');
 
       const stream = micStreamRef.current || (await navigator.mediaDevices.getUserMedia({ audio: true }));
       micStreamRef.current = stream;
+      console.log('✅ Microphone stream obtained');
 
       // Limpia cualquier source/processor anterior
       if (micSourceRef.current) { micSourceRef.current.disconnect(); }
@@ -75,6 +86,7 @@ const App: React.FC = () => {
       const source = audioContextInRef.current.createMediaStreamSource(stream);
       const scriptProcessor = audioContextInRef.current.createScriptProcessor(4096, 1, 1);
 
+      console.log('✅ ScriptProcessor creado, configurando onaudioprocess...');
 
       scriptProcessor.onaudioprocess = (e) => {
         // PERMITIR SIEMPRE el envío de audio para detectar interrupciones (Barge-in)
@@ -83,25 +95,21 @@ const App: React.FC = () => {
 
         const inputData = e.inputBuffer.getChannelData(0);
 
-        // Debug volumen (descomentar si se necesita)
-        // let sum = 0;
-        // for (let i = 0; i < inputData.length; i++) { sum += inputData[i] * inputData[i]; }
-        // const rms = Math.sqrt(sum / inputData.length);
-        // if (rms > 0.01) console.log("🎤 Audio in RMS:", rms.toFixed(4));
+        // Debug volumen
+        let sum = 0;
+        for (let i = 0; i < inputData.length; i++) { sum += inputData[i] * inputData[i]; }
+        const rms = Math.sqrt(sum / inputData.length);
+        if (rms > 0.01) console.log("🎤 Audio in RMS:", rms.toFixed(4));
 
         const inputSampleRate = audioContextInRef.current.sampleRate;
         const downsampled = downsampleBuffer(inputData, inputSampleRate, 16000);
         const pcmData = createPcmBlob(downsampled);
 
         sessionPromiseRef.current.then(session => {
-          // Verificar si el socket está abierto antes de enviar (evita error "WebSocket is closed")
-          // Nota: La API de GenAI no expone el socket directamente, pero podemos atrapar el error.
           session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
         }).catch(e => {
-          // Si el error indica que el socket está cerrado, detenemos el procesamiento
           if (JSON.stringify(e).includes("CLOSED") || JSON.stringify(e).includes("CLOSING")) {
             console.warn("⚠️ WebSocket cerrado, deteniendo envío de audio.");
-            // Opcional: llamar a handleStop() si es crítico, pero aquí solo evitamos el log
           } else {
             console.error("Error enviando audio:", e);
           }
@@ -113,8 +121,10 @@ const App: React.FC = () => {
 
       micSourceRef.current = source;
       micProcessorRef.current = scriptProcessor;
+
+      console.log('✅ Micrófono ACTIVADO y conectado');
     } catch (err) {
-      console.error('Error al iniciar micrófono:', err);
+      console.error('❌ Error al iniciar micrófono:', err);
     }
   };
 
