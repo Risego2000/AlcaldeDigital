@@ -210,6 +210,18 @@ const App: React.FC = () => {
               const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 24000, 1);
               console.log(`🔊 Audio decodificado: ${audioBuffer.duration.toFixed(2)}s, ${audioBuffer.numberOfChannels} canales`);
 
+              // DEBUG: Test directo de reproducción con el primer chunk
+              if (!(window as any).hasTestedAudio) {
+                (window as any).hasTestedAudio = true;
+                console.log('🧪 TEST: Intentando reproducir este chunk directamente...');
+                const testSource = ctx.createBufferSource();
+                testSource.buffer = audioBuffer;
+                testSource.connect(ctx.destination);
+                testSource.start(0); // Inmediato
+                testSource.onended = () => console.log('🧪 TEST chunk terminado');
+                console.log('🧪 TEST: Si escuchas algo AHORA, el pipeline funciona');
+              }
+
               const source = ctx.createBufferSource();
               source.buffer = audioBuffer;
 
