@@ -40,7 +40,7 @@ const DigitalAvatar: React.FC<DigitalAvatarProps> = ({ status, volume = 0 }) => 
   }, [volume, isSpeaking]);
 
   const cloudUrl = "https://zjyhmbwdapfvkpfqdvwh.supabase.co/storage/v1/object/sign/archivos/b657c78a18dd107c75c9b3138ae94e31.gif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jZjUzZDI0ZS03OGVkLTQ0MDctYjY5MC03OGEzM2FlYzM4OGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcmNoaXZvcy9iNjU3Yzc4YTE4ZGQxMDdjNzVjOWIzMTM4YWU5NGUzMS5naWYiLCJpYXQiOjE3NjgxNDQ1NTUsImV4cCI6MTkyNTgyNDU1NX0.k1znJwiB_Ifjb4ikll-_nRegGYVaJUHMp5yL0QAbtDM";
-  const localUrl = "/AlcaldeLive.gif";
+  const localUrl = `${import.meta.env.BASE_URL}AlcaldeLive.gif`;
   const avatarUrl = imageError ? localUrl : cloudUrl;
 
   const handleCaptureFrame = () => {

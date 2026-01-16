@@ -85,11 +85,12 @@ const App: React.FC = () => {
 
       // Creamos el nodo. Si falla por no estar registrado, reintentamos cargar el módulo
       let workletNode: AudioWorkletNode;
+      const workletPath = `${import.meta.env.BASE_URL}audio-processor.js`;
       try {
         workletNode = new AudioWorkletNode(ctx, 'audio-pcm-processor');
       } catch (e) {
-        console.log('🔄 Reintentando cargar AudioWorklet module...');
-        await ctx.audioWorklet.addModule('/audio-processor.js');
+        console.log(`🔄 Reintentando cargar AudioWorklet desde ${workletPath}...`);
+        await ctx.audioWorklet.addModule(workletPath);
         workletNode = new AudioWorkletNode(ctx, 'audio-pcm-processor');
       }
 
@@ -135,7 +136,7 @@ const App: React.FC = () => {
       audioContextInRef.current = ctxIn;
 
       // Intentar cargar el módulo inmediatamente al crear el contexto
-      ctxIn.audioWorklet.addModule('/audio-processor.js').catch(e => console.error("Error precargando worklet:", e));
+      ctxIn.audioWorklet.addModule(`${import.meta.env.BASE_URL}audio-processor.js`).catch(e => console.error("Error precargando worklet:", e));
 
       audioContextOutRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 48000 });
 
