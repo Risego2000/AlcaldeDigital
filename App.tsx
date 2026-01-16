@@ -89,9 +89,11 @@ const App: React.FC = () => {
       console.log('✅ ScriptProcessor creado, configurando onaudioprocess...');
 
       scriptProcessor.onaudioprocess = (e) => {
-        // PERMITIR SIEMPRE el envío de audio para detectar interrupciones (Barge-in)
-        // Solo filtramos si no estamos en vivo o si la sesión ha sido limpiada
-        if (!isLive || !sessionPromiseRef.current) return;
+        // Verificar que la sesión aún existe antes de intentar enviar
+        if (!sessionPromiseRef.current) {
+          console.warn('⚠️ sessionPromiseRef is null, skipping audio send');
+          return;
+        }
 
         const inputData = e.inputBuffer.getChannelData(0);
 
