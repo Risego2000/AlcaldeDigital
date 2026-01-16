@@ -29,7 +29,7 @@ const App: React.FC = () => {
   const animationFrameRef = useRef<number | null>(null);
   const listeningTimerRef = useRef<NodeJS.Timeout | null>(null);
   const micSourceRef = useRef<MediaStreamAudioSourceNode | null>(null);
-  const micProcessorRef = useRef<ScriptProcessorNode | null>(null);
+  const micProcessorRef = useRef<AudioWorkletNode | null>(null);
   const micStreamRef = useRef<MediaStream | null>(null);
 
   const statusRef = useRef<AgentStatus>(AgentStatus.IDLE);
@@ -83,27 +83,29 @@ const App: React.FC = () => {
       if (micSourceRef.current) { micSourceRef.current.disconnect(); }
       if (micProcessorRef.current) { micProcessorRef.current.disconnect(); }
 
+      await audioContextInRef.current.audioWorklet.addModule('/audio-processor.js');
+
       const source = audioContextInRef.current.createMediaStreamSource(stream);
-      const scriptProcessor = audioContextInRef.current.createScriptProcessor(4096, 1, 1);
+      const workletNode = new AudioWorkletNode(audioContextInRef.current, 'audio-pcm-processor');
 
-      console.log('✅ ScriptProcessor creado, configurando onaudioprocess...');
+      console.log('✅ AudioWorkletNode creado, configurando onmessage...');
 
-      scriptProcessor.onaudioprocess = (e) => {
+      workletNode.port.onmessage = (e) => {
         // Verificar que la sesión aún existe antes de intentar enviar
         if (!sessionPromiseRef.current) {
           console.warn('⚠️ sessionPromiseRef is null, skipping audio send');
           return;
         }
 
-        const inputData = e.inputBuffer.getChannelData(0);
+        const inputData = e.data; // Float32Array from Worklet
 
-        // Debug volumen
+        // Debug volumen (RMS)
         let sum = 0;
         for (let i = 0; i < inputData.length; i++) { sum += inputData[i] * inputData[i]; }
         const rms = Math.sqrt(sum / inputData.length);
         if (rms > 0.01) console.log("🎤 Audio in RMS:", rms.toFixed(4));
 
-        const inputSampleRate = audioContextInRef.current.sampleRate;
+        const inputSampleRate = audioContextInRef.current!.sampleRate;
         const downsampled = downsampleBuffer(inputData, inputSampleRate, 16000);
         const pcmData = createPcmBlob(downsampled);
 
@@ -118,13 +120,13 @@ const App: React.FC = () => {
         });
       };
 
-      source.connect(scriptProcessor);
-      scriptProcessor.connect(audioContextInRef.current.destination);
+      source.connect(workletNode);
+      workletNode.connect(audioContextInRef.current.destination);
 
       micSourceRef.current = source;
-      micProcessorRef.current = scriptProcessor;
+      micProcessorRef.current = workletNode;
 
-      console.log('✅ Micrófono ACTIVADO y conectado');
+      console.log('✅ Micrófono ACTIVADO (Worklet) y conectado');
     } catch (err) {
       console.error('❌ Error al iniciar micrófono:', err);
     }
@@ -186,6 +188,12 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
 - Eventos y noticias locales recientes
 `,
           tools: [{ googleSearch: {} }],
+          realtimeInputConfig: {
+            automaticActivityDetection: {
+              silenceDurationMs: 600,
+              endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH' as any
+            }
+          }
         },
         callbacks: {
           onopen: () => {

@@ -39,7 +39,9 @@ const DigitalAvatar: React.FC<DigitalAvatarProps> = ({ status, volume = 0 }) => 
     };
   }, [volume, isSpeaking]);
 
-  const avatarUrl = "https://zjyhmbwdapfvkpfqdvwh.supabase.co/storage/v1/object/sign/archivos/b657c78a18dd107c75c9b3138ae94e31.gif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jZjUzZDI0ZS03OGVkLTQ0MDctYjY5MC03OGEzM2FlYzM4OGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcmNoaXZvcy9iNjU3Yzc4YTE4ZGQxMDdjNzVjOWIzMTM4YWU5NGUzMS5naWYiLCJpYXQiOjE3NjgxNDQ1NTUsImV4cCI6MTkyNTgyNDU1NX0.k1znJwiB_Ifjb4ikll-_nRegGYVaJUHMp5yL0QAbtDM";
+  const cloudUrl = "https://zjyhmbwdapfvkpfqdvwh.supabase.co/storage/v1/object/sign/archivos/b657c78a18dd107c75c9b3138ae94e31.gif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jZjUzZDI0ZS03OGVkLTQ0MDctYjY5MC03OGEzM2FlYzM4OGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcmNoaXZvcy9iNjU3Yzc4YTE4ZGQxMDdjNzVjOWIzMTM4YWU5NGUzMS5naWYiLCJpYXQiOjE3NjgxNDQ1NTUsImV4cCI6MTkyNTgyNDU1NX0.k1znJwiB_Ifjb4ikll-_nRegGYVaJUHMp5yL0QAbtDM";
+  const localUrl = "/AlcaldeLive.gif";
+  const avatarUrl = imageError ? localUrl : cloudUrl;
 
   const handleCaptureFrame = () => {
     const canvas = canvasRef.current;
@@ -126,7 +128,7 @@ const DigitalAvatar: React.FC<DigitalAvatarProps> = ({ status, volume = 0 }) => 
             onLoad={handleCaptureFrame}
             onError={() => setImageError(true)}
             className={`w-full h-full object-cover transition-all duration-500 z-20 ${isConnecting ? 'blur-2xl opacity-20 scale-125' :
-                (isSpeaking && smoothedVolume >= 0.01) ? 'opacity-100 scale-110 contrast-125' : 'opacity-0 scale-100'
+              (isSpeaking && smoothedVolume >= 0.01) ? 'opacity-100 scale-110 contrast-125' : 'opacity-0 scale-100'
               }`}
           />
         </div>
