@@ -192,11 +192,18 @@ const App: React.FC = () => {
 
               const ctx = audioContextOutRef.current;
 
+              // Log estado del AudioContext
+              console.log(`🎛️ AudioContext state: ${ctx.state}, sampleRate: ${ctx.sampleRate}, currentTime: ${ctx.currentTime.toFixed(2)}s`);
+
               // CRÍTICO: Asegurar que el AudioContext está en estado 'running'
               if (ctx.state === 'suspended') {
                 console.warn('⚠️ AudioContext suspended, resuming...');
                 await ctx.resume();
                 console.log('✅ AudioContext resumed, state:', ctx.state);
+              }
+
+              if (ctx.state !== 'running') {
+                console.error('❌ AudioContext NOT running! State:', ctx.state);
               }
 
               nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
@@ -206,7 +213,13 @@ const App: React.FC = () => {
               const source = ctx.createBufferSource();
               source.buffer = audioBuffer;
 
+              // Conectar al analyser para visualización
               source.connect(analyserRef.current);
+
+              // TEMPORAL DEBUG: Conectar TAMBIÉN directamente al destination
+              // para bypass del analyser por si está causando problemas
+              source.connect(ctx.destination);
+              console.log('🔌 Source conectado a analyser Y destination (debug)');
 
               source.onended = () => {
                 activeSourcesRef.current.delete(source);
