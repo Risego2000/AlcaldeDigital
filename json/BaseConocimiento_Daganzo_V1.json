@@ -670,6 +670,108 @@
         "placa vado",
         "garaje"
       ]
+    },
+    {
+      "ID": "ORD-TAS-004",
+      "Nombre": "TASA DE BASURAS (RECOGIDA DE RESIDUOS) [F-11]",
+      "Tipo": "Tasa",
+      "Descripcion": "Tasa por prestación del servicio de recogida domiciliaria de basura y residuos sólidos urbanos.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-basuras.pdf",
+      "Palabras clave": [
+        "tasa basura",
+        "recibo basura",
+        "pagar basuras"
+      ]
+    },
+    {
+      "ID": "ORD-TAS-005",
+      "Nombre": "TASA POR SUMINISTRO DE AGUA POTABLE [F-13]",
+      "Tipo": "Tasa",
+      "Descripcion": "Regula el precio del suministro de agua, derechos de acometida y conservación de contadores.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-agua.pdf",
+      "Palabras clave": [
+        "recibo agua",
+        "pagar agua",
+        "alta agua",
+        "acometida"
+      ]
+    },
+    {
+      "ID": "ORD-GEN-002",
+      "Nombre": "ORDENANZA REGULADORA DE LA TENENCIA Y BIENESTAR ANIMAL [G-1]",
+      "Tipo": "General",
+      "Descripcion": "Normas sobre la tenencia de animales domésticos, perros potencialmente peligrosos (PPP), ruidos y zonas caninas.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-tenencia-animales.pdf",
+      "Palabras clave": [
+        "perro",
+        "animales",
+        "ppp",
+        "caca perro",
+        "correa"
+      ]
+    },
+    {
+      "ID": "ORD-GEN-003",
+      "Nombre": "ORDENANZA DE GESTIÓN DE RESIDUOS Y LIMPIEZA VIARIA [G-2]",
+      "Tipo": "General",
+      "Descripcion": "Normativa sobre horarios de basura, uso de contenedores, limpieza de calles y prohibición de vertidos.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-residuos-limpieza.pdf",
+      "Palabras clave": [
+        "tirar basura",
+        "escombros",
+        "reciclaje",
+        "punto limpio",
+        "horario basura"
+      ]
+    },
+    {
+      "ID": "ORD-GEN-004",
+      "Nombre": "ORDENANZA DE CONVIVENCIA CIUDADANA Y BUEN GOBIERNO",
+      "Tipo": "General",
+      "Descripcion": "Regula el comportamiento cívico en espacios públicos, ruidos vecinales, vandalismo y uso de espacios comunes.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-convivencia.pdf",
+      "Palabras clave": [
+        "ruidos",
+        "vecinos",
+        "fiestas en casa",
+        "botellón",
+        "vandalismo"
+      ]
+    },
+    {
+      "ID": "ORD-GEN-005",
+      "Nombre": "ORDENANZA DE TERRAZAS Y VELADORES",
+      "Tipo": "General",
+      "Descripcion": "Regulación para la instalación de mesas, sillas y elementos auxiliares en la vía pública por establecimientos de hostelería.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-terrazas.pdf",
+      "Palabras clave": [
+        "terraza bar",
+        "mesas calle",
+        "licencia terraza"
+      ]
+    },
+    {
+      "ID": "ORD-TAS-002",
+      "Nombre": "TASA POR LICENCIAS URBANÍSTICAS",
+      "Tipo": "Tasa",
+      "Descripcion": "Tasa administrativa por la tramitación de licencias de obra y urbanismo.",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-licencias-urbanisticas.pdf",
+      "Palabras clave": [
+        "tasa obra",
+        "pago licencia"
+      ]
+    },
+    {
+      "ID": "ORD-TAS-003",
+      "Nombre": "TASA POR VADOS",
+      "Tipo": "Tasa",
+      "Descripcion": "Tasa por la utilización privativa o aprovechamiento especial del dominio público local (entrada de vehículos).",
+      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-vados.pdf",
+      "Palabras clave": [
+        "vado",
+        "placa vado",
+        "garaje"
+      ]
     }
   ]
 }
