@@ -24,16 +24,40 @@ export async function decodeAudioData(
   sampleRate: number,
   numChannels: number,
 ): Promise<AudioBuffer> {
-  const dataInt16 = new Int16Array(data.buffer);
+  // Validación de datos de entrada
+  if (!data || data.length === 0) {
+    console.error('❌ decodeAudioData: data is empty!');
+    throw new Error('Empty audio data');
+  }
+
+  console.log(`📦 decodeAudioData: Received ${data.length} bytes`);
+
+  const dataInt16 = new Int16Array(data.buffer, data.byteOffset, data.length / 2);
   const frameCount = dataInt16.length / numChannels;
+
+  console.log(`🎚️ Creating buffer: ${frameCount} frames, ${numChannels} channels, ${sampleRate}Hz`);
+
   const buffer = ctx.createBuffer(numChannels, frameCount, sampleRate);
 
+  // Verificar que hay datos no-cero
+  let hasNonZero = false;
   for (let channel = 0; channel < numChannels; channel++) {
     const channelData = buffer.getChannelData(channel);
     for (let i = 0; i < frameCount; i++) {
-      channelData[i] = dataInt16[i * numChannels + channel] / 32768.0;
+      const sample = dataInt16[i * numChannels + channel] / 32768.0;
+      channelData[i] = sample;
+      if (sample !== 0 && !hasNonZero) {
+        hasNonZero = true;
+      }
     }
   }
+
+  if (!hasNonZero) {
+    console.warn('⚠️ Audio buffer contains only zeros (silence)!');
+  } else {
+    console.log('✅ Audio buffer has non-zero samples');
+  }
+
   return buffer;
 }
 
