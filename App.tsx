@@ -207,7 +207,7 @@ const App: React.FC = () => {
               }
 
               nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
-              const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 48000, 1); // CHANGED: 48000Hz to match AudioContext
+              const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 24000, 1); // Gemini sends 24kHz, browser will resample to 48kHz
               console.log(`🔊 Audio decodificado: ${audioBuffer.duration.toFixed(2)}s, ${audioBuffer.numberOfChannels} canales`);
 
               // DEBUG: Test directo de reproducción con el primer chunk
