@@ -65,73 +65,52 @@ const App: React.FC = () => {
     console.log('🎤 startMicrophone() called');
     try {
       const ctx = audioContextInRef.current;
-      if (!ctx) {
-        console.error('❌ audioContextInRef.current is NULL');
-        return;
-      }
-      if (!sessionPromiseRef.current) {
-        console.error('❌ sessionPromiseRef.current is NULL');
+      if (!ctx || !sessionPromiseRef.current) {
+        console.error('❌ audioContextInRef or sessionPromiseRef is NULL');
         return;
       }
 
-      console.log('✅ audioContextInRef and sessionPromiseRef are valid');
-
-      // IMPORTANTE: Asegurar que el contexto de entrada está activo
+      // Asegurar que el contexto está activo
       if (ctx.state === 'suspended') {
         await ctx.resume();
-        console.log('✅ AudioContextIn reanudado');
       }
 
       const stream = micStreamRef.current || (await navigator.mediaDevices.getUserMedia({ audio: true }));
       micStreamRef.current = stream;
-      console.log('✅ Microphone stream obtained');
 
-      // Limpia cualquier source/processor anterior
-      if (micSourceRef.current) { micSourceRef.current.disconnect(); }
-      if (micProcessorRef.current) { micProcessorRef.current.disconnect(); }
-
-      try {
-        await ctx.audioWorklet.addModule('/audio-processor.js');
-      } catch (e) {
-        console.warn('⚠️ Error o ya cargado el módulo:', e);
-      }
+      if (micSourceRef.current) micSourceRef.current.disconnect();
+      if (micProcessorRef.current) micProcessorRef.current.disconnect();
 
       const source = ctx.createMediaStreamSource(stream);
-      const workletNode = new AudioWorkletNode(ctx, 'audio-pcm-processor');
 
-      console.log('✅ AudioWorkletNode creado, configurando onmessage...');
+      // Creamos el nodo. Si falla por no estar registrado, reintentamos cargar el módulo
+      let workletNode: AudioWorkletNode;
+      try {
+        workletNode = new AudioWorkletNode(ctx, 'audio-pcm-processor');
+      } catch (e) {
+        console.log('🔄 Reintentando cargar AudioWorklet module...');
+        await ctx.audioWorklet.addModule('/audio-processor.js');
+        workletNode = new AudioWorkletNode(ctx, 'audio-pcm-processor');
+      }
 
       workletNode.port.onmessage = (e) => {
         if (!sessionPromiseRef.current) return;
-
-        const inputData = e.data; // Float32Array from Worklet
-
-        // RMS Debug
-        let sum = 0;
-        for (let i = 0; i < inputData.length; i++) { sum += inputData[i] * inputData[i]; }
-        const rms = Math.sqrt(sum / inputData.length);
-        if (rms > 0.01) console.log("🎤 Mic RMS:", rms.toFixed(4));
-
-        const inputSampleRate = ctx.sampleRate;
-        const downsampled = downsampleBuffer(inputData, inputSampleRate, 16000);
+        const inputData = e.data;
+        const downsampled = downsampleBuffer(inputData, ctx.sampleRate, 16000);
         const pcmData = createPcmBlob(downsampled);
-
         sessionPromiseRef.current.then(session => {
           session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
-        }).catch(err => {
-          if (!JSON.stringify(err).includes("CLOSED")) console.error("Error enviando audio:", err);
-        });
+        }).catch(() => { });
       };
 
       source.connect(workletNode);
       workletNode.connect(ctx.destination);
-
       micSourceRef.current = source;
       micProcessorRef.current = workletNode;
 
-      console.log('✅ Micrófono ACTIVADO y conectado');
+      console.log('✅ Micrófono conectado con AudioWorklet');
     } catch (err) {
-      console.error('❌ Error al iniciar micrófono:', err);
+      console.error('❌ Error crítico al iniciar micrófono:', err);
     }
   };
 
@@ -152,8 +131,13 @@ const App: React.FC = () => {
       setIsLive(true);
 
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      audioContextInRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
-      audioContextOutRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 48000 }); // CHANGED: 48000Hz (standard) instead of 24000Hz
+      const ctxIn = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
+      audioContextInRef.current = ctxIn;
+
+      // Intentar cargar el módulo inmediatamente al crear el contexto
+      ctxIn.audioWorklet.addModule('/audio-processor.js').catch(e => console.error("Error precargando worklet:", e));
+
+      audioContextOutRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 48000 });
 
       analyserRef.current = audioContextOutRef.current.createAnalyser();
       analyserRef.current.fftSize = 256;

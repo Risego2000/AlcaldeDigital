@@ -4,6 +4,7 @@ class AudioPCMProcessor extends AudioWorkletProcessor {
         this._bufferSize = 4096;
         this._buffer = new Float32Array(this._bufferSize);
         this._ptr = 0;
+        console.log('✅ AudioPCMProcessor initialized');
     }
 
     process(inputs, outputs, parameters) {
@@ -12,11 +13,11 @@ class AudioPCMProcessor extends AudioWorkletProcessor {
             const channelData = input[0];
 
             for (let i = 0; i < channelData.length; i++) {
-                this._buffer[this._ptr++] = channelData[i];
+                this._buffer[this._ptr++] = channelData[channelData.length === 128 ? i : i]; // Standard access
 
                 if (this._ptr >= this._bufferSize) {
-                    // Send the full buffer to the main thread
-                    this.port.postMessage(this._buffer);
+                    // Enviar una COPIA de los datos para evitar que se sobrescriban
+                    this.port.postMessage(new Float32Array(this._buffer));
                     this._ptr = 0;
                 }
             }
@@ -26,3 +27,4 @@ class AudioPCMProcessor extends AudioWorkletProcessor {
 }
 
 registerProcessor('audio-pcm-processor', AudioPCMProcessor);
+console.log('✅ Processor audio-pcm-processor registered');
