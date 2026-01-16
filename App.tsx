@@ -5,6 +5,9 @@ import { SYSTEM_INSTRUCTION } from './constants';
 import { AgentStatus } from './types';
 import DigitalAvatar from './components/DigitalAvatar';
 import { decodeBase64, decodeAudioData, createPcmBlob, downsampleBuffer } from './utils/audioUtils';
+import v1Knowledge from './json/BaseConocimiento_Daganzo_V1.json';
+import v2Intentions from './json/BaseConocimiento_Daganzo_V2.json';
+import v3Dialogues from './json/Motor_Dialogo_Daganzo_V3.json';
 
 interface GroundingSource {
   title: string;
@@ -150,7 +153,26 @@ const App: React.FC = () => {
             voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Puck' } },
             languageCode: 'es-ES', // Español de España
           },
-          systemInstruction: SYSTEM_INSTRUCTION + "\n\nIMPORTANTE: Tienes acceso a GOOGLE SEARCH. Utilízalo activamente para responder preguntas sobre la actualidad de Daganzo, el tráfico en Madrid, el tiempo o noticias de última hora que afecten a los ciudadanos.",
+          systemInstruction: SYSTEM_INSTRUCTION + `
+
+---
+📚 BASE DE CONOCIMIENTO MUNICIPAL DE DAGANZO - DATOS REALES:
+
+**V1 - NORMATIVA (${v1Knowledge.normativa?.length || 0} documentos):**
+${v1Knowledge.normativa?.slice(0, 15).map(n => `- ${n.ID}: ${n.Nombre}`).join('\n') || 'No disponible'}
+... USA los IDs de normativa para citar leyes específicas.
+
+**TRÁMITES DISPONIBLES (${(v1Knowledge as any).tramites?.length || 0}):**
+${((v1Knowledge as any).tramites || []).slice(0, 10).map((t: any) => `- ${t.ID}: ${t.Nombre}`).join('\n')}
+
+**V2 - ${v2Intentions.intenciones?.length || 0} INTENCIONES clasificadas por sectores**
+**V3 - ${v3Dialogues.flows?.length || 0} FLUJOS de diálogo operativos**
+
+IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
+- Tiempo actual en Daganzo
+- Tráfico en carreteras (M-100, etc)
+- Eventos y noticias locales recientes
+`,
           tools: [{ googleSearch: {} }],
         },
         callbacks: {
