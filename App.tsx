@@ -64,7 +64,8 @@ const App: React.FC = () => {
   const startMicrophone = async () => {
     console.log('🎤 startMicrophone() called');
     try {
-      if (!audioContextInRef.current) {
+      const ctx = audioContextInRef.current;
+      if (!ctx) {
         console.error('❌ audioContextInRef.current is NULL');
         return;
       }
@@ -75,6 +76,12 @@ const App: React.FC = () => {
 
       console.log('✅ audioContextInRef and sessionPromiseRef are valid');
 
+      // IMPORTANTE: Asegurar que el contexto de entrada está activo
+      if (ctx.state === 'suspended') {
+        await ctx.resume();
+        console.log('✅ AudioContextIn reanudado');
+      }
+
       const stream = micStreamRef.current || (await navigator.mediaDevices.getUserMedia({ audio: true }));
       micStreamRef.current = stream;
       console.log('✅ Microphone stream obtained');
@@ -83,50 +90,46 @@ const App: React.FC = () => {
       if (micSourceRef.current) { micSourceRef.current.disconnect(); }
       if (micProcessorRef.current) { micProcessorRef.current.disconnect(); }
 
-      await audioContextInRef.current.audioWorklet.addModule('/audio-processor.js');
+      try {
+        await ctx.audioWorklet.addModule('/audio-processor.js');
+      } catch (e) {
+        console.warn('⚠️ Error o ya cargado el módulo:', e);
+      }
 
-      const source = audioContextInRef.current.createMediaStreamSource(stream);
-      const workletNode = new AudioWorkletNode(audioContextInRef.current, 'audio-pcm-processor');
+      const source = ctx.createMediaStreamSource(stream);
+      const workletNode = new AudioWorkletNode(ctx, 'audio-pcm-processor');
 
       console.log('✅ AudioWorkletNode creado, configurando onmessage...');
 
       workletNode.port.onmessage = (e) => {
-        // Verificar que la sesión aún existe antes de intentar enviar
-        if (!sessionPromiseRef.current) {
-          console.warn('⚠️ sessionPromiseRef is null, skipping audio send');
-          return;
-        }
+        if (!sessionPromiseRef.current) return;
 
         const inputData = e.data; // Float32Array from Worklet
 
-        // Debug volumen (RMS)
+        // RMS Debug
         let sum = 0;
         for (let i = 0; i < inputData.length; i++) { sum += inputData[i] * inputData[i]; }
         const rms = Math.sqrt(sum / inputData.length);
-        if (rms > 0.01) console.log("🎤 Audio in RMS:", rms.toFixed(4));
+        if (rms > 0.01) console.log("🎤 Mic RMS:", rms.toFixed(4));
 
-        const inputSampleRate = audioContextInRef.current!.sampleRate;
+        const inputSampleRate = ctx.sampleRate;
         const downsampled = downsampleBuffer(inputData, inputSampleRate, 16000);
         const pcmData = createPcmBlob(downsampled);
 
         sessionPromiseRef.current.then(session => {
           session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
-        }).catch(e => {
-          if (JSON.stringify(e).includes("CLOSED") || JSON.stringify(e).includes("CLOSING")) {
-            console.warn("⚠️ WebSocket cerrado, deteniendo envío de audio.");
-          } else {
-            console.error("Error enviando audio:", e);
-          }
+        }).catch(err => {
+          if (!JSON.stringify(err).includes("CLOSED")) console.error("Error enviando audio:", err);
         });
       };
 
       source.connect(workletNode);
-      workletNode.connect(audioContextInRef.current.destination);
+      workletNode.connect(ctx.destination);
 
       micSourceRef.current = source;
       micProcessorRef.current = workletNode;
 
-      console.log('✅ Micrófono ACTIVADO (Worklet) y conectado');
+      console.log('✅ Micrófono ACTIVADO y conectado');
     } catch (err) {
       console.error('❌ Error al iniciar micrófono:', err);
     }
