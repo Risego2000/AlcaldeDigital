@@ -751,26 +751,1333 @@
       ]
     },
     {
-      "ID": "ORD-TAS-002",
-      "Nombre": "TASA POR LICENCIAS URBANÍSTICAS",
-      "Tipo": "Tasa",
-      "Descripcion": "Tasa administrativa por la tramitación de licencias de obra y urbanismo.",
-      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-licencias-urbanisticas.pdf",
+      "ID": "2016/679 (RGPD) – CELEX 32016R0679",
+      "Nombre": "Reglamento (UE) 2016/679 (RGPD) sobre protección de datos personales",
+      "Tipo": "Reglamento (UE)",
+      "Descripcion": "Protección de datos / administración electrónica",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32016R0679",
       "Palabras clave": [
-        "tasa obra",
-        "pago licencia"
+        "Protección de datos / administración electrónica"
       ]
     },
     {
-      "ID": "ORD-TAS-003",
-      "Nombre": "TASA POR VADOS",
-      "Tipo": "Tasa",
-      "Descripcion": "Tasa por la utilización privativa o aprovechamiento especial del dominio público local (entrada de vehículos).",
-      "URL": "https://www.ayto-daganzo.org/media/7770/ordenanza-fiscal-vados.pdf",
+      "ID": "2016/2102 – CELEX 32016L2102",
+      "Nombre": "Directiva (UE) 2016/2102 sobre accesibilidad de los sitios web y apps del sector público",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Accesibilidad / administración electrónica",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32016L2102",
       "Palabras clave": [
-        "vado",
-        "placa vado",
-        "garaje"
+        "Accesibilidad / administración electrónica"
+      ]
+    },
+    {
+      "ID": "2019/882 – CELEX 32019L0882",
+      "Nombre": "Directiva (UE) 2019/882 (Acta Europea de Accesibilidad)",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Accesibilidad / servicios",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32019L0882",
+      "Palabras clave": [
+        "Accesibilidad / servicios"
+      ]
+    },
+    {
+      "ID": "2014/55/UE – CELEX 32014L0055",
+      "Nombre": "Directiva 2014/55/UE sobre facturación electrónica en la contratación pública",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Administración electrónica / contratación",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32014L0055",
+      "Palabras clave": [
+        "Administración electrónica / contratación"
+      ]
+    },
+    {
+      "ID": "2000/60/CE – CELEX 32000L0060",
+      "Nombre": "Directiva 2000/60/CE (Directiva marco del agua)",
+      "Tipo": "Directiva (CE)",
+      "Descripcion": "Agua / medio ambiente",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32000L0060",
+      "Palabras clave": [
+        "Agua / medio ambiente"
+      ]
+    },
+    {
+      "ID": "2008/50/CE – CELEX 32008L0050",
+      "Nombre": "Directiva 2008/50/CE relativa a la calidad del aire ambiente y a una atmósfera más limpia en Europa",
+      "Tipo": "Directiva (CE)",
+      "Descripcion": "Calidad del aire / medio ambiente",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32008L0050",
+      "Palabras clave": [
+        "Calidad del aire / medio ambiente"
+      ]
+    },
+    {
+      "ID": "2022/2555 (NIS2) – CELEX 32022L2555",
+      "Nombre": "Directiva (UE) 2022/2555 (NIS2) relativa a medidas para un nivel común elevado de ciberseguridad",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Ciberseguridad / servicios esenciales",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32022L2555",
+      "Palabras clave": [
+        "Ciberseguridad / servicios esenciales"
+      ]
+    },
+    {
+      "ID": "2014/24/UE – CELEX 32014L0024",
+      "Nombre": "Directiva 2014/24/UE sobre contratación pública",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Contratación pública",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32014L0024",
+      "Palabras clave": [
+        "Contratación pública"
+      ]
+    },
+    {
+      "ID": "2014/25/UE – CELEX 32014L0025",
+      "Nombre": "Directiva 2014/25/UE sobre contratación por entidades que operan en sectores del agua, energía, transportes y servicios postales",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Contratación pública (sectores especiales)",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32014L0025",
+      "Palabras clave": [
+        "Contratación pública (sectores especiales)"
+      ]
+    },
+    {
+      "ID": "2014/23/UE – CELEX 32014L0023",
+      "Nombre": "Directiva 2014/23/UE relativa a la adjudicación de contratos de concesión",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Contratación pública / concesiones",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32014L0023",
+      "Palabras clave": [
+        "Contratación pública / concesiones"
+      ]
+    },
+    {
+      "ID": "2011/92/UE – CELEX 32011L0092",
+      "Nombre": "Directiva 2011/92/UE relativa a la evaluación de las repercusiones de determinados proyectos públicos y privados sobre el medio ambiente (EIA)",
+      "Tipo": "Directiva (UE)",
+      "Descripcion": "Evaluación ambiental",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32011L0092",
+      "Palabras clave": [
+        "Evaluación ambiental"
+      ]
+    },
+    {
+      "ID": "2001/42/CE – CELEX 32001L0042",
+      "Nombre": "Directiva 2001/42/CE relativa a la evaluación de los efectos de determinados planes y programas en el medio ambiente (SEA)",
+      "Tipo": "Directiva (CE)",
+      "Descripcion": "Evaluación ambiental estratégica",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32001L0042",
+      "Palabras clave": [
+        "Evaluación ambiental estratégica"
+      ]
+    },
+    {
+      "ID": "2006/123/CE – CELEX 32006L0123",
+      "Nombre": "Directiva 2006/123/CE relativa a los servicios en el mercado interior",
+      "Tipo": "Directiva (CE)",
+      "Descripcion": "Licencias / actividades económicas",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32006L0123",
+      "Palabras clave": [
+        "Licencias / actividades económicas"
+      ]
+    },
+    {
+      "ID": "2008/98/CE – CELEX 32008L0098",
+      "Nombre": "Directiva 2008/98/CE sobre los residuos (Directiva marco)",
+      "Tipo": "Directiva (CE)",
+      "Descripcion": "Residuos / medio ambiente",
+      "URL": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32008L0098",
+      "Palabras clave": [
+        "Residuos / medio ambiente"
+      ]
+    },
+    {
+      "ID": "BOE-A-1978-31229",
+      "Nombre": "Constitución Española",
+      "Tipo": "Constitución",
+      "Descripcion": "Marco constitucional",
+      "URL": "https://www.boe.es/buscar/pdf/1978/BOE-A-1978-31229-consolidado.pdf",
+      "Palabras clave": [
+        "Marco constitucional"
+      ]
+    },
+    {
+      "ID": "BOE-A-1985-11672",
+      "Nombre": "Ley Orgánica 5/1985, del Régimen Electoral General (LOREG)",
+      "Tipo": "Ley Orgánica",
+      "Descripcion": "Elecciones municipales",
+      "URL": "https://www.boe.es/buscar/pdf/1985/BOE-A-1985-11672-consolidado.pdf",
+      "Palabras clave": [
+        "Elecciones municipales"
+      ]
+    },
+    {
+      "ID": "BOE-A-2012-5730",
+      "Nombre": "Ley Orgánica 2/2012, de estabilidad presupuestaria y sostenibilidad financiera (LOEPSF)",
+      "Tipo": "Ley Orgánica",
+      "Descripcion": "Estabilidad presupuestaria",
+      "URL": "https://www.boe.es/buscar/pdf/2012/BOE-A-2012-5730-consolidado.pdf",
+      "Palabras clave": [
+        "Estabilidad presupuestaria"
+      ]
+    },
+    {
+      "ID": "BOE-A-2018-16673",
+      "Nombre": "Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)",
+      "Tipo": "Ley Orgánica",
+      "Descripcion": "Protección de datos",
+      "URL": "https://www.boe.es/buscar/pdf/2018/BOE-A-2018-16673-consolidado.pdf",
+      "Palabras clave": [
+        "Protección de datos"
+      ]
+    },
+    {
+      "ID": "BOE-A-2023-7936",
+      "Nombre": "Ley 7/2023, de protección de los derechos y el bienestar de los animales",
+      "Tipo": "Ley",
+      "Descripcion": "Bienestar animal",
+      "URL": "https://www.boe.es/buscar/pdf/2023/BOE-A-2023-7936-consolidado.pdf",
+      "Palabras clave": [
+        "Bienestar animal"
+      ]
+    },
+    {
+      "ID": "BOE-A-2017-12902",
+      "Nombre": "Ley 9/2017, de Contratos del Sector Público (LCSP)",
+      "Tipo": "Ley",
+      "Descripcion": "Contratación pública",
+      "URL": "https://www.boe.es/buscar/pdf/2017/BOE-A-2017-12902-consolidado.pdf",
+      "Palabras clave": [
+        "Contratación pública"
+      ]
+    },
+    {
+      "ID": "BOE-A-2013-12913",
+      "Nombre": "Ley 21/2013, de evaluación ambiental",
+      "Tipo": "Ley",
+      "Descripcion": "Evaluación ambiental",
+      "URL": "https://www.boe.es/buscar/pdf/2013/BOE-A-2013-12913-consolidado.pdf",
+      "Palabras clave": [
+        "Evaluación ambiental"
+      ]
+    },
+    {
+      "ID": "BOE-A-2003-23186",
+      "Nombre": "Ley 58/2003, General Tributaria (LGT)",
+      "Tipo": "Ley",
+      "Descripcion": "Gestión tributaria",
+      "URL": "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-23186-consolidado.pdf",
+      "Palabras clave": [
+        "Gestión tributaria"
+      ]
+    },
+    {
+      "ID": "BOE-A-2021-8447",
+      "Nombre": "Ley 7/2021, de cambio climático y transición energética",
+      "Tipo": "Ley",
+      "Descripcion": "Movilidad / medio ambiente",
+      "URL": "https://www.boe.es/buscar/pdf/2021/BOE-A-2021-8447-consolidado.pdf",
+      "Palabras clave": [
+        "Movilidad / medio ambiente"
+      ]
+    },
+    {
+      "ID": "BOE-A-2015-10566",
+      "Nombre": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (LRJSP)",
+      "Tipo": "Ley",
+      "Descripcion": "Organización administrativa",
+      "URL": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-10566-consolidado.pdf",
+      "Palabras clave": [
+        "Organización administrativa"
+      ]
+    },
+    {
+      "ID": "BOE-A-1985-12534",
+      "Nombre": "Ley 16/1985, del Patrimonio Histórico Español",
+      "Tipo": "Ley",
+      "Descripcion": "Patrimonio / cultura",
+      "URL": "https://www.boe.es/buscar/pdf/1985/BOE-A-1985-12534-consolidado.pdf",
+      "Palabras clave": [
+        "Patrimonio / cultura"
+      ]
+    },
+    {
+      "ID": "BOE-A-2015-10565",
+      "Nombre": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP)",
+      "Tipo": "Ley",
+      "Descripcion": "Procedimiento / administración electrónica",
+      "URL": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-10565-consolidado.pdf",
+      "Palabras clave": [
+        "Procedimiento / administración electrónica"
+      ]
+    },
+    {
+      "ID": "BOE-A-2015-7730",
+      "Nombre": "Ley 17/2015, del Sistema Nacional de Protección Civil",
+      "Tipo": "Ley",
+      "Descripcion": "Protección civil / emergencias",
+      "URL": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-7730-consolidado.pdf",
+      "Palabras clave": [
+        "Protección civil / emergencias"
+      ]
+    },
+    {
+      "ID": "BOE-A-1995-24292",
+      "Nombre": "Ley 31/1995, Prevención de Riesgos Laborales",
+      "Tipo": "Ley",
+      "Descripcion": "RRHH / seguridad laboral",
+      "URL": "https://www.boe.es/buscar/pdf/1995/BOE-A-1995-24292-consolidado.pdf",
+      "Palabras clave": [
+        "RRHH / seguridad laboral"
+      ]
+    },
+    {
+      "ID": "BOE-A-2022-5809",
+      "Nombre": "Ley 7/2022, de residuos y suelos contaminados para una economía circular",
+      "Tipo": "Ley",
+      "Descripcion": "Residuos / limpieza",
+      "URL": "https://www.boe.es/buscar/pdf/2022/BOE-A-2022-5809-consolidado.pdf",
+      "Palabras clave": [
+        "Residuos / limpieza"
+      ]
+    },
+    {
+      "ID": "BOE-A-2003-20976",
+      "Nombre": "Ley 37/2003, del Ruido",
+      "Tipo": "Ley",
+      "Descripcion": "Ruido / convivencia",
+      "URL": "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-20976-consolidado.pdf",
+      "Palabras clave": [
+        "Ruido / convivencia"
+      ]
+    },
+    {
+      "ID": "BOE-A-2013-13756",
+      "Nombre": "Ley 27/2013, de racionalización y sostenibilidad de la Administración Local (LRSAL)",
+      "Tipo": "Ley",
+      "Descripcion": "Régimen local / competencias",
+      "URL": "https://www.boe.es/buscar/pdf/2013/BOE-A-2013-13756-consolidado.pdf",
+      "Palabras clave": [
+        "Régimen local / competencias"
+      ]
+    },
+    {
+      "ID": "BOE-A-1985-5392",
+      "Nombre": "Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local (LBRL)",
+      "Tipo": "Ley",
+      "Descripcion": "Régimen local / organización",
+      "URL": "https://www.boe.es/buscar/pdf/1985/BOE-A-1985-5392-consolidado.pdf",
+      "Palabras clave": [
+        "Régimen local / organización"
+      ]
+    },
+    {
+      "ID": "BOE-A-2011-15623",
+      "Nombre": "Ley 33/2011, General de Salud Pública",
+      "Tipo": "Ley",
+      "Descripcion": "Salud pública",
+      "URL": "https://www.boe.es/buscar/pdf/2011/BOE-A-2011-15623-consolidado.pdf",
+      "Palabras clave": [
+        "Salud pública"
+      ]
+    },
+    {
+      "ID": "BOE-A-2003-20977",
+      "Nombre": "Ley 38/2003, General de Subvenciones (LGS)",
+      "Tipo": "Ley",
+      "Descripcion": "Subvenciones",
+      "URL": "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-20977-consolidado.pdf",
+      "Palabras clave": [
+        "Subvenciones"
+      ]
+    },
+    {
+      "ID": "BOE-A-2013-12887",
+      "Nombre": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno",
+      "Tipo": "Ley",
+      "Descripcion": "Transparencia / buen gobierno",
+      "URL": "https://www.boe.es/buscar/pdf/2013/BOE-A-2013-12887-consolidado.pdf",
+      "Palabras clave": [
+        "Transparencia / buen gobierno"
+      ]
+    },
+    {
+      "ID": "BOE-A-2004-4214",
+      "Nombre": "Real Decreto Legislativo 2/2004, Texto Refundido de la Ley Reguladora de las Haciendas Locales (TRLRHL)",
+      "Tipo": "Real Decreto Legislativo",
+      "Descripcion": "Haciendas locales / tributación",
+      "URL": "https://www.boe.es/buscar/pdf/2004/BOE-A-2004-4214-consolidado.pdf",
+      "Palabras clave": [
+        "Haciendas locales / tributación"
+      ]
+    },
+    {
+      "ID": "BOE-A-1986-9865",
+      "Nombre": "Real Decreto Legislativo 781/1986, de 18 de abril (TRRL)",
+      "Tipo": "Real Decreto Legislativo",
+      "Descripcion": "Régimen local / organización",
+      "URL": "https://www.boe.es/buscar/pdf/1986/BOE-A-1986-9865-consolidado.pdf",
+      "Palabras clave": [
+        "Régimen local / organización"
+      ]
+    },
+    {
+      "ID": "BOE-A-2015-11723",
+      "Nombre": "Real Decreto Legislativo 7/2015, Texto Refundido de la Ley de Suelo y Rehabilitación Urbana (TRLSRU)",
+      "Tipo": "Real Decreto Legislativo",
+      "Descripcion": "Suelo / urbanismo",
+      "URL": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-11723-consolidado.pdf",
+      "Palabras clave": [
+        "Suelo / urbanismo"
+      ]
+    },
+    {
+      "ID": "BOE-A-2015-11722",
+      "Nombre": "RDL 6/2015, Texto Refundido de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial",
+      "Tipo": "Real Decreto Legislativo",
+      "Descripcion": "Tráfico / movilidad",
+      "URL": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-11722-consolidado.pdf",
+      "Palabras clave": [
+        "Tráfico / movilidad"
+      ]
+    },
+    {
+      "ID": "BOE-A-2018-12699",
+      "Nombre": "Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad web y apps del sector público",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Accesibilidad",
+      "URL": "https://www.boe.es/buscar/pdf/2018/BOE-A-2018-12699-consolidado.pdf",
+      "Palabras clave": [
+        "Accesibilidad"
+      ]
+    },
+    {
+      "ID": "BOE-A-2021-5032",
+      "Nombre": "Real Decreto 203/2021, de 30 de marzo, por el que se aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Administración electrónica",
+      "URL": "https://www.boe.es/buscar/pdf/2021/BOE-A-2021-5032-consolidado.pdf",
+      "Palabras clave": [
+        "Administración electrónica"
+      ]
+    },
+    {
+      "ID": "BOE-A-2018-3760",
+      "Nombre": "Real Decreto 128/2018, de 16 de marzo, régimen jurídico de los FALHN",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Intervención/Secretaría",
+      "URL": "https://www.boe.es/buscar/pdf/2018/BOE-A-2018-3760-consolidado.pdf",
+      "Palabras clave": [
+        "Intervención/Secretaría"
+      ]
+    },
+    {
+      "ID": "BOE-A-2022-22689",
+      "Nombre": "Real Decreto 1052/2022, requisitos mínimos de Zonas de Bajas Emisiones (ZBE)",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Movilidad / ZBE",
+      "URL": "https://www.boe.es/buscar/pdf/2022/BOE-A-2022-22689-consolidado.pdf",
+      "Palabras clave": [
+        "Movilidad / ZBE"
+      ]
+    },
+    {
+      "ID": "BOE-A-1986-33252",
+      "Nombre": "Real Decreto 2568/1986, de 28 de noviembre (ROF)",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Organización y funcionamiento",
+      "URL": "https://www.boe.es/buscar/pdf/1986/BOE-A-1986-33252-consolidado.pdf",
+      "Palabras clave": [
+        "Organización y funcionamiento"
+      ]
+    },
+    {
+      "ID": "BOE-A-1986-21944",
+      "Nombre": "Real Decreto 1690/1986, de 11 de julio, Reglamento de Población y Demarcación Territorial de las Entidades Locales",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Padrón / territorio",
+      "URL": "https://www.boe.es/buscar/pdf/1986/BOE-A-1986-21944-consolidado.pdf",
+      "Palabras clave": [
+        "Padrón / territorio"
+      ]
+    },
+    {
+      "ID": "BOE-A-1986-17958",
+      "Nombre": "Real Decreto 1372/1986, de 13 de junio, Reglamento de Bienes de las Entidades Locales",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Patrimonio / bienes",
+      "URL": "https://www.boe.es/buscar/pdf/1986/BOE-A-1986-17958-consolidado.pdf",
+      "Palabras clave": [
+        "Patrimonio / bienes"
+      ]
+    },
+    {
+      "ID": "BOE-A-1990-9664",
+      "Nombre": "Real Decreto 500/1990, de 20 de abril, presupuestos de entidades locales",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Presupuesto / contabilidad",
+      "URL": "https://www.boe.es/buscar/pdf/1990/BOE-A-1990-9664-consolidado.pdf",
+      "Palabras clave": [
+        "Presupuesto / contabilidad"
+      ]
+    },
+    {
+      "ID": "BOE-A-2006-13371",
+      "Nombre": "Real Decreto 887/2006, Reglamento de la Ley General de Subvenciones",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Subvenciones",
+      "URL": "https://www.boe.es/buscar/pdf/2006/BOE-A-2006-13371-consolidado.pdf",
+      "Palabras clave": [
+        "Subvenciones"
+      ]
+    },
+    {
+      "ID": "BOE-A-2003-23514",
+      "Nombre": "Real Decreto 1428/2003, Reglamento General de Circulación",
+      "Tipo": "Real Decreto",
+      "Descripcion": "Tráfico / señalización",
+      "URL": "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-23514-consolidado.pdf",
+      "Palabras clave": [
+        "Tráfico / señalización"
+      ]
+    },
+    {
+      "ID": "BOE-A-1983-6317",
+      "Nombre": "Ley Orgánica 3/1983, de 25 de febrero, Estatuto de Autonomía de la Comunidad de Madrid",
+      "Tipo": "Ley Orgánica",
+      "Descripcion": "Organización autonómica",
+      "URL": "https://www.boe.es/buscar/pdf/1983/BOE-A-1983-6317-consolidado.pdf",
+      "Palabras clave": [
+        "Organización autonómica"
+      ]
+    },
+    {
+      "ID": "BOE-A-1998-9648",
+      "Nombre": "Ley 17/1997, de 4 de julio, de Espectáculos Públicos y Actividades Recreativas de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Actividades / licencias",
+      "URL": "https://www.boe.es/buscar/pdf/1998/BOE-A-1998-9648-consolidado.pdf",
+      "Palabras clave": [
+        "Actividades / licencias"
+      ]
+    },
+    {
+      "ID": "BOE-A-2003-10722",
+      "Nombre": "Ley 2/2003, de 11 de marzo, de Administración Local de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Administración local (CAM)",
+      "URL": "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-10722-consolidado.pdf",
+      "Palabras clave": [
+        "Administración local (CAM)"
+      ]
+    },
+    {
+      "ID": "BOE-A-2023-15468",
+      "Nombre": "Ley 6/2023, de 30 de marzo, de Archivos y Documentos de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Archivos / administración",
+      "URL": "https://www.boe.es/buscar/pdf/2023/BOE-A-2023-15468-consolidado.pdf",
+      "Palabras clave": [
+        "Archivos / administración"
+      ]
+    },
+    {
+      "ID": "BOE-A-2016-11097",
+      "Nombre": "Ley 4/2016, de 22 de julio, de protección de los animales de compañía",
+      "Tipo": "Ley",
+      "Descripcion": "Bienestar animal",
+      "URL": "https://www.boe.es/buscar/pdf/2016/BOE-A-2016-11097-consolidado.pdf",
+      "Palabras clave": [
+        "Bienestar animal"
+      ]
+    },
+    {
+      "ID": "BOE-A-1995-8732",
+      "Nombre": "Ley 14/1994, de 28 de diciembre, de prevención y extinción de incendios y salvamentos (CAM)",
+      "Tipo": "Ley",
+      "Descripcion": "Bomberos / emergencias",
+      "URL": "https://www.boe.es/buscar/pdf/1995/BOE-A-1995-8732-consolidado.pdf",
+      "Palabras clave": [
+        "Bomberos / emergencias"
+      ]
+    },
+    {
+      "ID": "BOE-A-2025-5523",
+      "Nombre": "Ley 8/2024, de 26 de diciembre, de medidas para la mejora de la gestión pública en el ámbito local y autonómico (CAM)",
+      "Tipo": "Ley",
+      "Descripcion": "Gestión pública / régimen local",
+      "URL": "https://www.boe.es/buscar/pdf/2025/BOE-A-2025-5523-consolidado.pdf",
+      "Palabras clave": [
+        "Gestión pública / régimen local"
+      ]
+    },
+    {
+      "ID": "BOE-A-2015-1956",
+      "Nombre": "Ley 4/2014, de 22 de diciembre, de medidas fiscales y administrativas (CAM)",
+      "Tipo": "Ley",
+      "Descripcion": "Hacienda / medio ambiente",
+      "URL": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-1956-consolidado.pdf",
+      "Palabras clave": [
+        "Hacienda / medio ambiente"
+      ]
+    },
+    {
+      "ID": "BOE-A-2023-14347",
+      "Nombre": "Ley 4/2023, de 22 de marzo, de Derechos, Garantías y Protección Integral de la Infancia y la Adolescencia (CAM)",
+      "Tipo": "Ley",
+      "Descripcion": "Infancia / servicios",
+      "URL": "https://www.boe.es/buscar/pdf/2023/BOE-A-2023-14347-consolidado.pdf",
+      "Palabras clave": [
+        "Infancia / servicios"
+      ]
+    },
+    {
+      "ID": "BOCM-m-2024-90246",
+      "Nombre": "Ley 7/2024, de 26 de diciembre, de medidas para un desarrollo equilibrado en medio ambiente y ordenación del territorio",
+      "Tipo": "Ley (BOCM)",
+      "Descripcion": "Medio ambiente / territorio / urbanismo",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Medio ambiente / territorio / urbanismo"
+      ]
+    },
+    {
+      "ID": "BOE-A-2006-3669",
+      "Nombre": "Ley 8/2005, de 26 de diciembre, de protección y fomento del arbolado urbano",
+      "Tipo": "Ley",
+      "Descripcion": "Medio ambiente / zonas verdes",
+      "URL": "https://www.boe.es/buscar/pdf/2006/BOE-A-2006-3669-consolidado.pdf",
+      "Palabras clave": [
+        "Medio ambiente / zonas verdes"
+      ]
+    },
+    {
+      "ID": "BOE-A-1991-10363",
+      "Nombre": "Ley 2/1991, de 14 de febrero, para la protección y regulación de la flora y fauna silvestres (CAM)",
+      "Tipo": "Ley",
+      "Descripcion": "Medio natural",
+      "URL": "https://www.boe.es/buscar/pdf/1991/BOE-A-1991-10363-consolidado.pdf",
+      "Palabras clave": [
+        "Medio natural"
+      ]
+    },
+    {
+      "ID": "BOE-A-1995-18784",
+      "Nombre": "Ley 9/1995, de 28 de marzo, de Medidas de Política Territorial, Suelo y Urbanismo",
+      "Tipo": "Ley",
+      "Descripcion": "Ordenación del territorio / urbanismo",
+      "URL": "https://www.boe.es/buscar/pdf/1995/BOE-A-1995-18784-consolidado.pdf",
+      "Palabras clave": [
+        "Ordenación del territorio / urbanismo"
+      ]
+    },
+    {
+      "ID": "BOE-A-1984-2926",
+      "Nombre": "Ley 1/1983, de 13 de diciembre, de Gobierno y Administración de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Organización autonómica",
+      "URL": "https://www.boe.es/buscar/pdf/1984/BOE-A-1984-2926-consolidado.pdf",
+      "Palabras clave": [
+        "Organización autonómica"
+      ]
+    },
+    {
+      "ID": "BOE-A-2023-15467",
+      "Nombre": "Ley 5/2023, de 10 de marzo, del Sistema Integrado de Protección Civil y Emergencias de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Protección civil / emergencias",
+      "URL": "https://www.boe.es/buscar/pdf/2023/BOE-A-2023-15467-consolidado.pdf",
+      "Palabras clave": [
+        "Protección civil / emergencias"
+      ]
+    },
+    {
+      "ID": "BOE-A-2023-13538",
+      "Nombre": "Ley 12/2022, de 21 de diciembre, de Servicios Sociales de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Servicios sociales",
+      "URL": "https://www.boe.es/buscar/pdf/2023/BOE-A-2023-13538-consolidado.pdf",
+      "Palabras clave": [
+        "Servicios sociales"
+      ]
+    },
+    {
+      "ID": "BOE-A-2024-10766",
+      "Nombre": "Ley 16/2023, de 27 de diciembre, de medidas para la simplificación y mejora de la eficacia de instituciones y organismos de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Simplificación administrativa / organización",
+      "URL": "https://www.boe.es/buscar/pdf/2024/BOE-A-2024-10766-consolidado.pdf",
+      "Palabras clave": [
+        "Simplificación administrativa / organización"
+      ]
+    },
+    {
+      "ID": "BOE-A-1995-11843",
+      "Nombre": "Ley 2/1995, de 8 de marzo, de Subvenciones de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Subvenciones (CAM)",
+      "URL": "https://www.boe.es/buscar/pdf/1995/BOE-A-1995-11843-consolidado.pdf",
+      "Palabras clave": [
+        "Subvenciones (CAM)"
+      ]
+    },
+    {
+      "ID": "BOE-A-2019-10102",
+      "Nombre": "Ley 10/2019, de 10 de abril, de Transparencia y de Participación de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Transparencia / participación",
+      "URL": "https://www.boe.es/buscar/pdf/2019/BOE-A-2019-10102-consolidado.pdf",
+      "Palabras clave": [
+        "Transparencia / participación"
+      ]
+    },
+    {
+      "ID": "BOE-A-2001-18984",
+      "Nombre": "Ley 9/2001, de 17 de julio, del Suelo de la Comunidad de Madrid",
+      "Tipo": "Ley",
+      "Descripcion": "Urbanismo / planeamiento",
+      "URL": "https://www.boe.es/buscar/pdf/2001/BOE-A-2001-18984-consolidado.pdf",
+      "Palabras clave": [
+        "Urbanismo / planeamiento"
+      ]
+    },
+    {
+      "ID": "OG-2025",
+      "Nombre": "Ordenanzas de Policía y Buen Gobierno (desde marzo 2025) – compendio",
+      "Tipo": "Compendio municipal",
+      "Descripcion": "Ordenanzas de policía / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Ordenanzas de policía / convivencia"
+      ]
+    },
+    {
+      "ID": "OF-2025",
+      "Nombre": "Ordenanzas Fiscales 2025 (compendio)",
+      "Tipo": "Compendio municipal",
+      "Descripcion": "Ordenanzas fiscales / tributación",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Ordenanzas fiscales / tributación"
+      ]
+    },
+    {
+      "ID": "Índice OG",
+      "Nombre": "Índice de Ordenanzas de Policía y Buen Gobierno",
+      "Tipo": "Índice / relación",
+      "Descripcion": "Ordenanzas de policía / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Ordenanzas de policía / convivencia"
+      ]
+    },
+    {
+      "ID": "Índice OF 2025",
+      "Nombre": "Índice de Ordenanzas Fiscales 2025",
+      "Tipo": "Índice / relación",
+      "Descripcion": "Ordenanzas fiscales / tributación",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Ordenanzas fiscales / tributación"
+      ]
+    },
+    {
+      "ID": "F-1",
+      "Nombre": "ORDENANZA PARA LA DETERMINACIÓN DE LA CUOTA TRIBUTARIA DEL IMPUESTO SOBRE BIENES INMUEBLES",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-10",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR LICENCIAS SOBRE APERTURA DE ESTABLECIMIENTOS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-11",
+      "Nombre": "ORDENANZA REGULADORA DE TASA SOBRE RECOGIDA DOMICILIARIA DE BASURAS O RESIDUOS SÓLIDOS URBANOS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-12",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR PRESTACIÓN DEL SERVICIO DE ALCANTARILLADO",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-13",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR SERVICIO DE DISTRIBUCIÓN DE AGUA POTABLE",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-14",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR UTILIZACIÓN PRIVATIVA Y APROVECHAMIENTO ESPECIAL DEL SUELO, SUBSUELO Y SUELO DE DOMINIO PÚBLICO LOCAL",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-15",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR LA PRESTACIÓN DE LOS SERVICIOS DE PISCINAS, ACTIVIDADES E INSTALACIONES DEPORTIVAS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-16",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR INCLUSIÓN DE PUBLICIDAD O ANUNCIOS EN PUBLICACIONES MUNICIPALES Y ANUNCIOS EN EL B.O.C.M",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-18",
+      "Nombre": "ORDENANZA REGULADORA DE TASA PARA LA UTILIZACIÓN DE DEPENDENCIAS MUNICIPALES PARA LA CELEBRACIÓN DE MATRIMONIOS CIVILES",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-19",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR PRESTACIÓN DE SERVICIOS DE ENSEÑANZA DE LA ESCUELA MUNICIPAL DE MÚSICA Y DANZA Y ACTIVIDADES CULTURALES",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-2",
+      "Nombre": "ORDENANZA PARA LA DETERMINACIÓN DE LA CUOTA TRIBUTARIA DEL IMPUESTO SOBRE ACTIVIDADES ECONÓMICAS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-20",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR EXPEDICIÓN DE DOCUMENTOS ADMINISTRATIVOS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-21",
+      "Nombre": "ORDENANZA REGULADORA DEL PRECIO PÚBLICO POR LA PRESTACIÓN DEL SERVICIO DEL HOGAR DEL JUBILADO SAN JUAN",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-22",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR PRESTACIÓN DE SERVICIOS DE ACTIVIDADES CULTURALES Y USO DE INSTALACIONES",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-23",
+      "Nombre": "ORDENANZA REGULADORA DE TASA POR PRESTACIÓN DE LOS SERVICIOS DE ACTIVIDADES EXTRAESCOLARES",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-24",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR EL DEPÓSITO DE RESIDUOS EN EL PUNTO LIMPIO MUNICIPAL",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-25",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR INSTALACIÓN DE QUIOSCOS EN TERRENOS DE USO PÚBLICO",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-26",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR PRESTACIÓN DE SERVICIOS SANITARIOS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-27",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR PRESTACIÓN DE SERVICIO DE EXTINCIÓN DE INCENDIOS, SALVAMENTOS, ASISTENCIA TÉCNICA, FORMATIVA, SERVICIOS PREVENTIVOS Y OTROS.",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-28",
+      "Nombre": "REGULADORA DE LA TASA POR LA UTILIZACIÓN PRIVATIVA DE HUERTOS URBANOS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-3",
+      "Nombre": "ORDENANZA PARA LA DETERMINACIÓN DE LA CUOTA TRIBUTARIA DEL IMPUESTO SOBRE VEHÍCULOS DE TRACCIÓN MECÁNICA",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-4",
+      "Nombre": "ORDENANZA REGULADORA DEL IMPUESTO SOBRE EL INCREMENTO DEL VALOR DE LOS TERRENOS DE NATURALEZA URBANA",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-5",
+      "Nombre": "ORDENANZA REGULADORA DEL IMPUESTO SOBRE CONSTRUCCIONES, INSTALACIONES Y OBRAS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-6",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR LICENCIAS URBANÍSTICAS",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-7",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR PRESTACIÓN DE SERVICIOS DEL CEMENTERIO MUNICIPAL",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-8",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR RECOGIDA Y RETIRADA DE VEHÍCULOS ABANDONADOS O ESTACIONADOS INDEBIDA O ABUSIVAMENTE EN LA VÍA PÚBLICA",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "F-9",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR LICENCIAS DE AUTOTAXIS Y DEMÁS VEHÍCULOS DE ALQUILER (DEROGADA EN PLENO 23-06-2021)",
+      "Tipo": "Ordenanza fiscal",
+      "Descripcion": "Fiscal / tributación y tasas",
+      "URL": "DEROGADA (según índice municipal)",
+      "Palabras clave": [
+        "Fiscal / tributación y tasas"
+      ]
+    },
+    {
+      "ID": "G-1",
+      "Nombre": "ORDENANZA REGULADORA DE LA TENENCIA Y BIENESTAR ANIMAL",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-10",
+      "Nombre": "ORDENANZA PARA EL PRÉSTAMO DE LIBROS DE TEXTO PARA LOS ALUMNOS MATRICULADOS EN LOS CENTROS ESCOLARES PÚBLICOS DE EDUCACIÓN INFANTIL, PRIMARIA Y SECUNDARIA OBLIGATORIA DEL MUNICIPIO.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-11",
+      "Nombre": "ORDENANZA REGULADORA DE LA PRESTACIÓN DE DIFERENTES SERVICIOS EN LA BIBLIOTECA MUNICIPAL “ISABEL ALLANDE”",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-12",
+      "Nombre": "ORDENANZA REGULADORA DE PROMOCIÓN DE VIVIENDA JOVEN DEL AYUNTAMIENTO DE DAGANZO.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-13",
+      "Nombre": "ORDENANZA REGULADORA DEL USO DE FERTILIZANTES ORGÁNICOS EN AGRICULTURA",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-14",
+      "Nombre": "ORDENANZA REGULADORA DE LAS AYUDAS AL TRANSPORTE PARA ESTUDIANTES. (DEROGADA EL 14 DE ABRIL DE 2012)",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "DEROGADA (según índice municipal)",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-15",
+      "Nombre": "REGLAMENTO DEL ARCHIVO MUNICIPAL DE DAGANZO",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-16",
+      "Nombre": "REGULADORA DE LAS AYUDAS DE EMERGENCIA SOCIAL",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-17",
+      "Nombre": "REGULADORA DE LA PRESTACIÓN DE AYUDA A DOMICILIO",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-18",
+      "Nombre": "ORDENANZA REGULADORA DE LA TASA POR RODAJES CINEMATOGRÁFICOS, DOCUMENTALES Y REPORTAJES REALIZADOS EN TERRENO DE USO PÚBLICO",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-19",
+      "Nombre": "ORDENANZA ESPECIAL REGULADORA DE TRAMITACIÓN DE LICENCIAS DE INSTALACIÓN, APERTURA Y FUNCIONAMIENTO DE ACTIVIDADES DEL AYUNTAMIENTO DE DAGANZO",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-2",
+      "Nombre": "ORDENANZA REGULADORA SOBRE GESTIÓN DE RESIDUOS Y LIMPIEZA VIARIA.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-20",
+      "Nombre": "ORDENANZA URBANÍSTICA MUNICIPAL REGULADORA DE LA EXIGENCIA DE DOTACIÓN DE PLAZAS DE APARCAMIENTO EN EL SUELO URBANO CONSOLIDADO DEL PLANEAMIENTO VIGENTE: NN.SS DE DAGANZO",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-21",
+      "Nombre": "ORDENANZA REGULADORA DE CONVIVENCIA CIUDADANA",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-22",
+      "Nombre": "ORDENANZA REGULADORA DE LAS CONDICIONES ESTÉTICAS DE LA EDIFICACIÓN EN LA ZONA DE ORDENACIÓN NÚMERO 1 CASCO ANTIGUO DE LAS NORMAS SUBSIDIARIAS DE DAGANZO DE ARRIBA",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-23",
+      "Nombre": "ORDENANZA REGULADORA DE TÍTULOS HONORÍFICOS DE LA VILLA DE DAGANZO Y CONDECORACIONES DE POLICÍA LOCAL Y PROTECCIÓN CIVIL",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-24",
+      "Nombre": "ORDENANZA MUNICIPAL REGULADORA DE BIENES COMUNALES “EL ALMAZANEJO” G.-25 REGLAMENTO DE PROTECCIÓN CIVIL",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-26",
+      "Nombre": "ORDENANZA REGULADORA DE VIVIENDAS DE EMERGENCIA SOCIAL",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-27",
+      "Nombre": "NO EXISTE",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-28",
+      "Nombre": "ORDENANZA REGULADORA HUERTOS URBANOS EN DAGANZO",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-29",
+      "Nombre": "ORDENANZA REGULADORA DE USOS Y OCUPACIÓN DE LA VÍA PÚBLICA DURANTE LA CELEBRACIÓN DE LAS FIESTAS PATRONALES",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-3",
+      "Nombre": "ORDENANZA REGULADORA DE MERCADILLO Y VENTA AMBULANTE",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-30",
+      "Nombre": "ORDENANZA MUNICIPAL DE PROTECCIÓN DE LA INFANCIA Y LA ADOLESCENCIA FRENTE A LA VIOLENCIA",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-4",
+      "Nombre": "ORDENANZA POR LA QUE SE REGULA LA TARJETA DE ESTACIONAMIENTO DE VEHÍCULOS PARA PERSONAS CON MOVILIDAD REDUCIDA.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-5",
+      "Nombre": "ORDENANZA REGULADORA DE LOS SERVICIOS DE TRANSPORTE PÚBLICO URBANO EN AUTOMÓVILES DE TURISMO.(DEROGADO PLENO 23 DE JUNIO DE 2021",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "DEROGADA (según índice municipal)",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-6",
+      "Nombre": "ORDENANZA REGULADORA DE PROCEDIMIENTO DE CREACIÓN DE FICHEROS DE DATOS DE CARÁCTER PERSONAL Y DE TITULARIDAD PÚBLICA.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-7",
+      "Nombre": "ORDENANZA MUNICIPAL DE CIRCULACIÓN.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-8",
+      "Nombre": "ORDENANZA DE ZONAS VERDES URBANAS.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "G-9",
+      "Nombre": "ORDENANZA REGULADORA DE LA PRESTACIÓN TELEMÁTICA DE SERVICIOS PÚBLICOS Y DEL REGISTRO ELECTRÓNICO.",
+      "Tipo": "Ordenanza/Reglamento municipal",
+      "Descripcion": "Policía / buen gobierno / convivencia",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Policía / buen gobierno / convivencia"
+      ]
+    },
+    {
+      "ID": "BOCM-20251219-73",
+      "Nombre": "Modificación definitiva de la Ordenanza Fiscal F-1 (IBI) – anuncio BOCM 19/12/2025",
+      "Tipo": "Publicación en BOCM",
+      "Descripcion": "Fiscal / IBI",
+      "URL": "VIGENTE (modificación)",
+      "Palabras clave": [
+        "Fiscal / IBI"
+      ]
+    },
+    {
+      "ID": "BOCM-20240208 (F-22)",
+      "Nombre": "Modificación de la Ordenanza Fiscal F-22 – anuncio BOCM 08/02/2024",
+      "Tipo": "Publicación en BOCM",
+      "Descripcion": "Fiscal / actividades culturales",
+      "URL": "VIGENTE (modificación)",
+      "Palabras clave": [
+        "Fiscal / actividades culturales"
+      ]
+    },
+    {
+      "ID": "BOCM-20250314-68 (G-30)",
+      "Nombre": "Aprobación definitiva de la Ordenanza G-30 (Protección de la infancia y adolescencia frente a la violencia) – BOCM 14/03/2025",
+      "Tipo": "Publicación en BOCM",
+      "Descripcion": "Infancia / protección",
+      "URL": "VIGENTE",
+      "Palabras clave": [
+        "Infancia / protección"
+      ]
+    },
+    {
+      "ID": "BOCM-20240723 (G-25)",
+      "Nombre": "Modificación definitiva de la Ordenanza/Reglamento G-25 (Protección Civil) – anuncio BOCM 23/07/2024",
+      "Tipo": "Publicación en BOCM",
+      "Descripcion": "Protección civil",
+      "URL": "VIGENTE (modificación)",
+      "Palabras clave": [
+        "Protección civil"
       ]
     }
   ]
