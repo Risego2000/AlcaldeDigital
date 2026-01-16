@@ -148,6 +148,7 @@ const App: React.FC = () => {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
             voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Puck' } },
+            languageCode: 'es-ES', // Español de España
           },
           systemInstruction: SYSTEM_INSTRUCTION + "\n\nIMPORTANTE: Tienes acceso a GOOGLE SEARCH. Utilízalo activamente para responder preguntas sobre la actualidad de Daganzo, el tráfico en Madrid, el tiempo o noticias de última hora que afecten a los ciudadanos.",
           tools: [{ googleSearch: {} }],
