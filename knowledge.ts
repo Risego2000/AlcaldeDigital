@@ -1,6 +1,8 @@
-// knowledge.ts - Sistema de gestión de conocimiento de 3 capas
-// NO usa imports con "@/" - solo rutas relativas y fetch
+import v1Data from './json/BaseConocimiento_Daganzo_V1.json';
+import v2Data from './json/BaseConocimiento_Daganzo_V2.json';
+import v3Data from './json/Motor_Dialogo_Daganzo_V3.json';
 
+// Definir tipos para las bases de conocimiento
 interface V1Knowledge {
     meta: any;
     taxonomia: any[];
@@ -64,58 +66,16 @@ interface ConversationState {
     slotIndex: number;
 }
 
-// Cache en memoria
-let v1Cache: V1Knowledge | null = null;
-let v2Cache: V2Intents | null = null;
-let v3Cache: V3DialogFlow | null = null;
-let isLoading = false;
-
 /**
- * Carga y cachea las 3 bases de conocimiento una sola vez
+ * Retorna las bases de conocimiento cargadas mediante imports estáticos.
+ * Mantenemos la firma asíncrona por compatibilidad.
  */
 export async function loadKB(): Promise<{ v1: V1Knowledge; v2: V2Intents; v3: V3DialogFlow }> {
-    // Si ya está cargado, devolver cache
-    if (v1Cache && v2Cache && v3Cache) {
-        return { v1: v1Cache, v2: v2Cache, v3: v3Cache };
-    }
-
-    // Evitar carga múltiple simultánea
-    if (isLoading) {
-        await new Promise(resolve => setTimeout(resolve, 100));
-        return loadKB();
-    }
-
-    isLoading = true;
-
-    try {
-        // Cargar los 3 JSONs en paralelo usando fetch
-        const [v1Response, v2Response, v3Response] = await Promise.all([
-            fetch('./json/BaseConocimiento_Daganzo_V1.json'),
-            fetch('./json/BaseConocimiento_Daganzo_V2.json'),
-            fetch('./json/Motor_Dialogo_Daganzo_V3.json')
-        ]);
-
-        if (!v1Response.ok || !v2Response.ok || !v3Response.ok) {
-            throw new Error('Error al cargar bases de conocimiento');
-        }
-
-        v1Cache = await v1Response.json();
-        v2Cache = await v2Response.json();
-        v3Cache = await v3Response.json();
-
-        console.log('✅ Bases de conocimiento cargadas:', {
-            v1_tramites: v1Cache.tramites.length,
-            v2_intenciones: v2Cache.intenciones.length,
-            v3_flows: v3Cache.flows.length
-        });
-
-        return { v1: v1Cache, v2: v2Cache, v3: v3Cache };
-    } catch (error) {
-        console.error('❌ Error cargando Knowledge Base:', error);
-        throw error;
-    } finally {
-        isLoading = false;
-    }
+    return {
+        v1: v1Data as unknown as V1Knowledge,
+        v2: v2Data as unknown as V2Intents,
+        v3: v3Data as unknown as V3DialogFlow
+    };
 }
 
 /**
