@@ -191,8 +191,18 @@ const App: React.FC = () => {
               // if (micProcessorRef.current) { micProcessorRef.current.disconnect(); }
 
               const ctx = audioContextOutRef.current;
+
+              // CRÍTICO: Asegurar que el AudioContext está en estado 'running'
+              if (ctx.state === 'suspended') {
+                console.warn('⚠️ AudioContext suspended, resuming...');
+                await ctx.resume();
+                console.log('✅ AudioContext resumed, state:', ctx.state);
+              }
+
               nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
               const audioBuffer = await decodeAudioData(decodeBase64(base64Audio), ctx, 24000, 1);
+              console.log(`🔊 Audio decodificado: ${audioBuffer.duration.toFixed(2)}s, ${audioBuffer.numberOfChannels} canales`);
+
               const source = ctx.createBufferSource();
               source.buffer = audioBuffer;
 
@@ -216,6 +226,8 @@ const App: React.FC = () => {
                   }, 1500);
                 }
               };
+
+              console.log(`▶️ Starting playback at ${nextStartTimeRef.current.toFixed(2)}s`);
               source.start(nextStartTimeRef.current);
               nextStartTimeRef.current += audioBuffer.duration;
               activeSourcesRef.current.add(source);
