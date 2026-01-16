@@ -321,8 +321,8 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
         <header className="text-center space-y-4 animate-fadeIn w-full flex flex-col items-center">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
             <img
-              src={`${import.meta.env.BASE_URL}icon.jpg`}
-              alt="Daganzo Atiende Logo"
+              src={`${import.meta.env.BASE_URL}Escudobn.png`}
+              alt="Escudo Daganzo"
               className="h-16 md:h-20 w-auto object-contain brightness-110 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] mix-blend-lighten"
             />
             <div className="text-center md:text-left">
