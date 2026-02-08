@@ -156,7 +156,7 @@ const App: React.FC = () => {
       micStreamRef.current = stream;
 
       const sessionPromise = ai.live.connect({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-2.0-flash-exp',
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
@@ -183,7 +183,13 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
 - Tráfico en carreteras (M-100, etc)
 - Eventos y noticias locales recientes
 `,
-          tools: [{ googleSearch: {} }]
+          tools: [{ googleSearch: {} }],
+          realtimeInputConfig: {
+            automaticActivityDetection: {
+              silenceDurationMs: 800,
+              endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH' as any
+            }
+          }
         },
         callbacks: {
           onopen: () => {
