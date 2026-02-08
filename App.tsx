@@ -100,7 +100,11 @@ const App: React.FC = () => {
         const downsampled = downsampleBuffer(inputData, ctx.sampleRate, 16000);
         const pcmData = createPcmBlob(downsampled);
         sessionPromiseRef.current.then(session => {
-          session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
+          try {
+            session.sendRealtimeInput({ media: { data: pcmData, mimeType: 'audio/pcm;rate=16000' } });
+          } catch (err) {
+            console.error('❌ Error enviando audio:', err);
+          }
         }).catch(() => { });
       };
 
@@ -148,7 +152,7 @@ const App: React.FC = () => {
       micStreamRef.current = stream;
 
       const sessionPromise = ai.live.connect({
-        model: 'gemini-2.0-flash-exp',
+        model: 'gemini-2.0-flash',
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
@@ -190,7 +194,11 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
             startMicrophone(); // INICIAR MICRÓFONO INMEDIATAMENTE para permitir interrupciones
 
             sessionPromise.then(session => {
-              session.sendRealtimeInput({ text: "CONEXIÓN ESTABLECIDA. Saluda al ciudadano como Manuel Jurado y ofrécele tu ayuda." });
+              try {
+                session.sendRealtimeInput({ text: "CONEXIÓN ESTABLECIDA. Saluda al ciudadano como Manuel Jurado y ofrécele tu ayuda." });
+              } catch (err) {
+                console.error('❌ Error enviando saludo inicial:', err);
+              }
             });
           },
           onmessage: async (message: LiveServerMessage) => {
