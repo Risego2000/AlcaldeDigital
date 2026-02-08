@@ -160,8 +160,7 @@ const App: React.FC = () => {
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
-            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Charon' } }, // Voz masculina profunda y madura
-            languageCode: 'es-ES', // Español de España
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Charon' } } // Voz masculina profunda y madura
           },
           systemInstruction: SYSTEM_INSTRUCTION + `
 
