@@ -260,10 +260,17 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
             }
           },
           onerror: (e) => {
-            console.error("Live session error:", e);
+            console.error("❌ Live session error:", e);
             setStatus(AgentStatus.ERROR);
           },
-          onclose: () => handleStop()
+          onclose: () => {
+            console.warn('⚠️ Sesión Live cerrada. Analizando causa...');
+            // Intentar detectar si fue un cierre inesperado
+            if (statusRef.current !== AgentStatus.IDLE) {
+              console.error('❌ El WebSocket se cerró inesperadamente mientras el agente no estaba en IDLE.');
+            }
+            handleStop();
+          }
         }
       });
 
