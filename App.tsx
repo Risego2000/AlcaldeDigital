@@ -156,7 +156,7 @@ const App: React.FC = () => {
       micStreamRef.current = stream;
 
       const sessionPromise = ai.live.connect({
-        model: 'gemini-2.0-flash-exp',
+        model: 'gemini-live-2.5-flash-native-audio',
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
