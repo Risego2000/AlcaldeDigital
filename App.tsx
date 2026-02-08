@@ -131,6 +131,10 @@ const App: React.FC = () => {
         return;
       }
 
+      // Validar que la API key se cargó correctamente
+      const apiKey = process.env.API_KEY;
+      console.log(`🔑 API Key cargada: ${apiKey.substring(0, 10)}...${apiKey.substring(apiKey.length - 4)}`);
+
       setSources([]);
       setStatus(AgentStatus.CONNECTING);
       setIsLive(true);
@@ -179,13 +183,7 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
 - Tráfico en carreteras (M-100, etc)
 - Eventos y noticias locales recientes
 `,
-          tools: [{ googleSearch: {} }],
-          realtimeInputConfig: {
-            automaticActivityDetection: {
-              silenceDurationMs: 600,
-              endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH' as any
-            }
-          }
+          tools: [{ googleSearch: {} }]
         },
         callbacks: {
           onopen: () => {
@@ -271,8 +269,24 @@ IMPORTANTE: Tienes acceso a GOOGLE SEARCH para actualidad. Úsalo para:
             console.error("❌ Live session error:", e);
             setStatus(AgentStatus.ERROR);
           },
-          onclose: () => {
+          onclose: (closeEvent?: any) => {
             console.warn('⚠️ Sesión Live cerrada. Analizando causa...');
+
+            // Capturar detalles del cierre
+            if (closeEvent) {
+              console.error(`❌ WebSocket Close Code: ${closeEvent.code}`);
+              console.error(`❌ WebSocket Close Reason: ${closeEvent.reason || 'No reason provided'}`);
+
+              // Interpretar códigos comunes
+              if (closeEvent.code === 1008) {
+                console.error('🚨 POLICY VIOLATION (1008): La API key puede estar reportada como filtrada. Genera una nueva key.');
+              } else if (closeEvent.code === 1011) {
+                console.error('🚨 INTERNAL ERROR (1011): Error del servidor, posiblemente por configuración inválida o cuotas excedidas.');
+              } else if (closeEvent.code === 1006) {
+                console.error('🚨 ABNORMAL CLOSURE (1006): Conexión cerrada sin frame de cierre (timeout o error de red).');
+              }
+            }
+
             // Intentar detectar si fue un cierre inesperado
             if (statusRef.current !== AgentStatus.IDLE) {
               console.error('❌ El WebSocket se cerró inesperadamente mientras el agente no estaba en IDLE.');
